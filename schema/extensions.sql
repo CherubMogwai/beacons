@@ -1,0 +1,7 @@
+CREATE EXTENSION cube
+SCHEMA public
+VERSION "1.0";
+
+CREATE EXTENSION earthdistance
+SCHEMA public
+VERSION "1.0";
