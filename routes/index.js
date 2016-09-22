@@ -1,4 +1,4 @@
-import Beacon from 'models/beacon';
+// import Beacon from 'models/beacon';
 
 export default function(router) {
 

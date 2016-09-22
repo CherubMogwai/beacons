@@ -13,6 +13,7 @@ import Model from 'models';
 const app = new Koa();
 const router = koaRouter();
 
+app.use(bodyParser());
 koaValidate(app);
 
 app
