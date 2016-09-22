@@ -18,6 +18,19 @@ NOTE: Do NOT add your development.yaml or production.yaml file to Git as it can 
 
 `npm start`
 
+## Usage
+
+Examples coming soon.
+
+### TODO
+
+* Saving of position and status
+* Beacon history
+* Beacon pairing and distance to intensity calculation (with response)
+* Simulated beacons for testing
+* Ability to define boundaries and inform beacon state when outside
+
+
 ## Testing
 
 First time: Ensure you've installed the global dependencies for testing:
