@@ -9,3 +9,5 @@ CREATE TABLE "public"."history" (
     PRIMARY KEY ("id"),
     CONSTRAINT "fk_history_beacon_id" FOREIGN KEY ("beacon_id") REFERENCES "public"."beacons"("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+ALTER TABLE "public"."history" ADD COLUMN "seq" integer NOT NULL DEFAULT '0';
