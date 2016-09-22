@@ -11,3 +11,4 @@ CREATE TABLE "public"."history" (
 );
 
 ALTER TABLE "public"."history" ADD COLUMN "seq" integer NOT NULL DEFAULT '0';
+CREATE INDEX history_location on history USING gist(location);

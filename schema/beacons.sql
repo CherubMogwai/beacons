@@ -8,3 +8,5 @@ CREATE TABLE "public"."beacons" (
     "battery" integer,
     PRIMARY KEY ("id")
 );
+
+CREATE INDEX beacons_location on beacons USING gist(location);
