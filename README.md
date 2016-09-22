@@ -6,7 +6,7 @@ It will reply with relevant status information used to update the beacon's light
 
 ## Installation
 
-This assumes you've already set up a Linux machine with Node and Postgres (See `docs` for those setup guides)
+This assumes you've already set up a Linux machine with Node and Postgres (See `docs` for those setup guides, specifically [vagrant](docs/vagrant.md) for development)
 
 * `npm install`
 * (Optional for Dev) Create a `development.yaml` in the `config` folder containing any values unique to your development environment
