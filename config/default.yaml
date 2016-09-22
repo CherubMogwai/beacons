@@ -1,0 +1,5 @@
+beacons:
+  port: 3000
+  db:
+    poolSize: 10
+    connectionString: "postgres://beacons:dev@localhost/beacons"
