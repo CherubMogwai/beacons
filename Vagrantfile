@@ -72,7 +72,7 @@ Vagrant.configure(2) do |config|
     sudo su - postgres -c 'createdb beacons'
     sudo su - postgres -c 'echo "CREATE USER beacons WITH PASSWORD '\\\''dev'\\\''" | psql'
     sudo su - postgres -c 'echo "GRANT ALL PRIVILEGES ON DATABASE beacons TO beacons" | psql'
-    sudo su - postgres -c 'psql < /vagrant/schema/extensions.sql'
+    sudo su - postgres -c 'psql -d beacons < /vagrant/schema/extensions.sql'
     echo "host all all 10.0.2.0/24 trust" | sudo tee -a /etc/postgresql/9.5/main/pg_hba.conf
     echo "listen_addresses='*'" | sudo tee -a /etc/postgresql/9.5/main/postgresql.conf
     sudo service postgresql restart
