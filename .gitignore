@@ -85,3 +85,5 @@ fabric.properties
 .nyc_output
 config/production.yaml
 config/development.yaml
+
+.vagrant
