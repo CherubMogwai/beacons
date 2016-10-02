@@ -3,3 +3,7 @@ beacons:
   db:
     poolSize: 10
     connectionString: "postgres://beacons:dev@localhost/beacons"
+  lightStates:
+    noMatch: [ 0, 0, 255, 20 ]
+    outOfBounds: [ 255, 0, 0, 100 ]
+    matched: [ 255, 255, 0 ]
