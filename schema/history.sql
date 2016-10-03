@@ -1,6 +1,6 @@
 CREATE TABLE "public"."history" (
     "id" serial,
-    "beacon_id" char(16) NOT NULL,
+    "beacon_id" character varying(16) NOT NULL,
     "time" timestamp without time zone NOT NULL DEFAULT now(),
     "location" earth,
     "rate" integer,

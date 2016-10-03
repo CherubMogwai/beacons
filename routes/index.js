@@ -37,7 +37,7 @@ export default function(router) {
         const { distance } = nearest;
         response = [ ...config.lightStates.matched, parseInt(Beacon.calculateIntensity(distance)) ];
 
-        console.info('Matched with:', nearest.id, 'Response:', response);
+        console.info('Matched with:', nearest.id, '  Distance:', distance, '  Response:', response);
 
       } else {
         response = config.lightStates.noMatch;
