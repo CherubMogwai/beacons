@@ -70,6 +70,12 @@ Optionally you can install the default boundary, based in the North End of Kelow
 psql beacons < schemas/samples/boundaries.sql
 ```
 
+Remember to log out of the vagrant machine by typing:
+
+```bash
+exit
+```
+
 #### Administrating the database easily
 
 Install `Postico` (https://eggerapps.at/postico/) into OSX, and add a
