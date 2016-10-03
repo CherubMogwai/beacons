@@ -14,22 +14,69 @@ This assumes you've already set up a Linux machine with Node and Postgres (See `
 
 NOTE: Do NOT add your development.yaml or production.yaml file to Git as it can leak sensitive credentials
 
+
 ## Running
 
 `npm start`
 
+
 ## Usage
 
-Examples coming soon.
+The service is set up to read the standard webhook format set out by Particle (https://docs.particle.io/guide/tools-and-features/webhooks/)
+
+Simply send it your latitude and longitude as a string separated by a comma in the data field.
+
+```
+POST /webhook/location
+{
+    "event": "location",
+    "data": "49.9019344,-119.4945467",
+    "published_at": "YYYY-MM-DDTHH:mm:ssZ",
+    "coreid": "beacon_id"
+}
+```
+
+### Sample Responses
+
+Matched and within 5 meters:
+
+```
+{
+  "data": "255,255,0,100"
+}
+```
+
+Matched and greater than 200 meters, but less than 250:
+
+```
+{
+  "data": "255,255,0,20"
+}
+```
+
+No matched beacons:
+
+```
+{
+  "data": "0,0,255,20"
+}
+```
+
+Out of bounds:
+
+```
+{
+  "data": "255,0,0,100"
+}
+```
+
 
 ### TODO
 
-* Saving of position and status
-* Beacon history
-* Beacon pairing and distance to intensity calculation (with response)
 * Simulated beacons for testing
-* Ability to define boundaries and inform beacon state when outside
-
+* Polygon based boundaries (Using PostGIS instead of earthdistance lat/lng rectangles)
+* Only match beacons within same boundary as source beacon (Right now you need to be in bounds to match, but it will match any beacons within 250m regardless of them being within your boundary)
+* More test cases
 
 ## Testing
 
