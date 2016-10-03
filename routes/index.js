@@ -20,24 +20,36 @@ export default function(router) {
 
     const beacon = new Beacon(id);
     await beacon.updateLocation(lat, lng);
-    const nearbyBeacons = await beacon.getNearby();
+
+    const inBounds = await beacon.withinBounds();
 
     // Default [ r, g, b, intensity ] values
     let response = config.lightStates.outOfBounds;
 
-    // Nearby beacons found
-    if (Array.isArray(nearbyBeacons) && nearbyBeacons.length) {
-      // Get nearest beacon
-      const nearest = nearbyBeacons[0];
-      const { distance } = nearest;
+    if (inBounds) {
 
+      const nearbyBeacons = await beacon.getNearby();
 
+      // Nearby beacons found
+      if (Array.isArray(nearbyBeacons) && nearbyBeacons.length) {
+        // Get nearest beacon
+        const nearest = nearbyBeacons[0];
+        const { distance } = nearest;
+        response = [ ...config.lightStates.matched, parseInt(Beacon.calculateIntensity(distance)) ];
+
+        console.info('Matched with:', nearest.id, 'Response:', response);
+
+      } else {
+        response = config.lightStates.noMatch;
+      }
 
     }
 
     ctx.body = {
       data: response.join(',')
     };
+
+    beacon.addHistory(lat, lng, response, !!inBounds);
 
   });
 
