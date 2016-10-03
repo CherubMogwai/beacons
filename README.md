@@ -3,6 +3,9 @@
 This service aims to provide a simple RESTful JSON interface for beacons to report their status, including location.
 It will reply with relevant status information used to update the beacon's light and internal state.
 
+Currently it matches your beacon to the nearest beacon within 250 meters (configurable), if you're close to multiple
+it may jump between them based on whichever is slightly closer.
+
 
 ## Installation
 
@@ -73,6 +76,7 @@ Out of bounds:
 
 ### TODO
 
+* Better system of persistence when near multiple beacons (should it latch onto one until a condition is met?)
 * Simulated beacons for testing
 * Polygon based boundaries (Using PostGIS instead of earthdistance lat/lng rectangles)
 * Only match beacons within same boundary as source beacon (Right now you need to be in bounds to match, but it will match any beacons within 250m regardless of them being within your boundary)
