@@ -17,7 +17,7 @@ export default function(router) {
     } = ctx.request.body;
 
     // Auto-acknowledge any particle webhook tests
-    if (event === 'test-event') {
+    if (data === 'test-event') {
       return ctx.body = { success: true };
     }
 
