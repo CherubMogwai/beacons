@@ -13,3 +13,10 @@ test(`should be able to load status page`, async t => {
   t.is(res.statusCode, 200);
   t.true(res.body.success);
 });
+
+test(`should be able to query the database`, async t => {
+  const res = await request(app).get(`/status/database`);
+
+  t.is(res.statusCode, 200);
+  t.true(res.body.success);
+});

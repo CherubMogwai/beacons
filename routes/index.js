@@ -1,10 +1,16 @@
 import { beacons as config } from 'config';
 import Beacon from 'models/beacon';
+import Model from 'models';
 
 export default function(router) {
 
   router.get('/status', async ctx => {
     ctx.body = { success: true };
+  });
+
+  router.get('/status/database', async ctx => {
+    const success = await Model.testConnection();
+    ctx.body = { success };
   });
 
   router.post('/webhook/location', async ctx => {
@@ -50,9 +56,7 @@ export default function(router) {
 
     }
 
-    ctx.body = {
-      data: response.join(',')
-    };
+    ctx.body = response.join(',');
 
     beacon.addHistory(lat, lng, response, !!inBounds);
 

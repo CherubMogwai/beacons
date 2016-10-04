@@ -36,4 +36,9 @@ export default class Model {
     });
   }
 
+  static async testConnection() {
+    const result = await Model.query(`SELECT 1`);
+    return result && result.rows && !!result.rows[0];
+  }
+
 }
