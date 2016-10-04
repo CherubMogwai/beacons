@@ -16,6 +16,11 @@ export default function(router) {
       published_at: timestamp
     } = ctx.request.body;
 
+    // Auto-acknowledge any particle webhook tests
+    if (event === 'test-event') {
+      return ctx.body = { success: true };
+    }
+
     const [ lat, lng ] = data.split(',');
 
     const beacon = new Beacon(id);
