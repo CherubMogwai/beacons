@@ -5,6 +5,7 @@ beacons:
     connectionString: "postgres://beacons:dev@localhost/beacons"
   rate: 10
   matching:
+    boundaries: false
     timeout: 30
     intensity:
       low: 20

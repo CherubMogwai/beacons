@@ -37,7 +37,8 @@ export default function(router) {
     // Default [ r, g, b, intensity ] values
     let response = config.lightStates.outOfBounds;
 
-    if (inBounds) {
+    // Either we turned off boundary matching, or we're in valid bounds
+    if (!config.matching.boundaries || inBounds) {
 
       const nearbyBeacons = await beacon.getNearby();
 
