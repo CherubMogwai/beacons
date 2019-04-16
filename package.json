@@ -65,7 +65,8 @@
     "koa-bodyparser": "^3.2.0",
     "koa-router": "^7.0.1",
     "koa-validate": "^1.0.7",
-    "pg": "^6.1.0"
+    "pg": "^6.1.0",
+    "transform-runtime": "0.0.0"
   },
   "devDependencies": {
     "ava": "^0.16.0",
