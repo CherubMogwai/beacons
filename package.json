@@ -10,8 +10,8 @@
     "test": "NODE_ENV=test NODE_PATH=./ NODE_CONFIG_DIR=../config nyc ava",
     "report": "nyc report --reporter=html",
     "lint": "eslint . --ext .js",
-    "ngrok": "ngrok http -subdomain=beacons --authtoken $NGROK_API_TOKEN 80",
-    "start": "node ."
+    "ngrok": "ngrok http -subdomain=beacons --authtoken $NGROK_API_TOKEN $PORT",
+    "start": "npm run ngrok && node ."
   },
   "ava": {
     "verbose": true,
