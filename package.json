@@ -11,7 +11,7 @@
     "report": "nyc report --reporter=html",
     "lint": "eslint . --ext .js",
     "ngrok": "ngrok http -subdomain=beacons 80",
-    "start": "npm run ngrok && node ."
+    "start": "node ."
   },
   "ava": {
     "verbose": true,
