@@ -52,6 +52,7 @@ export default function(router) {
         console.info('Matched with:', nearest.id, '  Distance:', distance, '  Response:', response);
 
       } else {
+        console.info('No Match :-( nearbyBeacons.length is', nearbyBeacons.length);
         response = config.lightStates.noMatch;
       }
 

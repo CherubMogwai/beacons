@@ -15,12 +15,12 @@ export default class Beacon extends Model {
    * @returns {*}
    */
   async updateLocation(lat, lng) {
-
-    console.log('Updated location:', this.id, lat, lng);
+    var time = new Date();
+    console.log(time.toLocaleTimeString(), 'Updated location:', this.id, lat, lng);
 
     return await Model.query(`
       WITH update AS (
-        UPDATE beacons 
+        UPDATE beacons
         SET location = ll_to_earth($2, $3), last_seen = NOW()
         WHERE id = $1
         RETURNING id
@@ -39,14 +39,14 @@ export default class Beacon extends Model {
   async getNearby() {
 
     const results = await Model.query(`
-      SELECT 
+      SELECT
         *,
         earth_distance(location, (SELECT location FROM beacons WHERE id = $1)) AS distance
       FROM beacons
-      WHERE 
-        id != $1 AND 
-        earth_distance(location, (SELECT location FROM beacons WHERE id = $1)) <= $2 AND 
-        last_seen >= (NOW() - INTERVAL '${config.matching.timeout} second')
+      WHERE
+        id != $1 AND
+        earth_distance(location, (SELECT location FROM beacons WHERE id = $1)) <= $2 AND
+        last_seen >= (NOW() - INTERVAL '45 second')
       ORDER BY distance ASC
       LIMIT 5
     `, [ this.id, config.matching.distance.max ]);
@@ -55,6 +55,7 @@ export default class Beacon extends Model {
 
   }
 
+ //      last_seen >= (NOW() - INTERVAL '${config.matching.timeout} second')
   /**
    * Returns false if out of bounds, or a list if named boundaries that match
    * @returns {*}
@@ -97,7 +98,7 @@ export default class Beacon extends Model {
   async addHistory(lat, lng, lightInfo, inBounds) {
     const [ r, g, b, i ] = lightInfo;
     await Model.query(`
-      INSERT INTO history 
+      INSERT INTO history
         (beacon_id, location, r, g, b, intensity, in_boundary, rate)
       VALUES
         ($1, ll_to_earth($2, $3), $4, $5, $6, $7, $8, $9)

@@ -17,4 +17,4 @@ beacons:
   lightStates:
     noMatch: [ 0, 0, 255, 20 ]
     outOfBounds: [ 255, 0, 0, 100 ]
-    matched: [ 255, 255, 0 ]
+    matched: [ 0, 255, 0 ]
