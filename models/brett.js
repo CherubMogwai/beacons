@@ -16,6 +16,6 @@ export default class Brett {
   }
 
   reply(){
-    return [...[ 255, 50, 0, 100 ], 100]
+    return [...[ 255, 200, 200, 100 ], 100]
   }
 }
