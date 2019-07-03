@@ -27,7 +27,9 @@ export default class Alice {
 //  }
 
     reply(){
-      return [...[ 255, 0, 255, 100 ], 100]
+      var r = Math.random();
+      var i = parseInt(r*255);
+      return [...[ 255, i, 255, 100 ], 100]
     }
   }
 

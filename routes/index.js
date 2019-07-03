@@ -17,7 +17,9 @@ const Beacons = {
 }
 
 export default function(router) {
-
+  router.get('/', async ctx => {
+    ctx.body = "Found";
+  });
   router.get('/status', async ctx => {
     ctx.body = { success: true };
   });
