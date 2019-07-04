@@ -28,8 +28,8 @@ export default class Alice {
 
   where_brett(){
     const brett = this.ladies.find((lady) => lady.name === "Brett");
-    //if (!brett){
-    //  return null
+    if (!brett){
+      return null
     }
 
     var diff = this.lat - brett.lat;
