@@ -18,6 +18,8 @@ export default class Janet {
   }
 
   reply(){
-    return [...[ 255, 0, 0, 100 ], 100]
+    var r = Math.random();
+    var i = parseInt(r*255);
+    return [...[ 50, 100, i ], 100]
   }
 }

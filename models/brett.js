@@ -16,6 +16,8 @@ export default class Brett {
   }
 
   reply(){
-    return [...[ 255, 200, 200, 100 ], 100]
+    var r = Math.random();
+    var i = parseInt(r*255);
+    return [...[ i, 25, 100 ], 100]
   }
 }
