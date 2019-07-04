@@ -25,16 +25,20 @@ export default class Alice {
     return diff
   }
 
-  reply(){
-    if (where_janet) {
-      return [...[ 255, 0, 150, 100 ], 100]
-
-    } else {
-      return [...[ 255, 255, 0, 100 ], 100]
+  where_brett(){
+    const brett = this.ladies.find((lady) => lady.name === "Brett");
+    if (!brett){
+      return null
     }
+    var diff = this.lat - brett.lat;
+    console.log([this.lat, brett.lat, diff] );
+    return diff
+  }
+
+  reply(){
   //    var r = Math.random();
   //    var i = parseInt(r*255);
-  //return [...[ 255, 0, 150, 100 ], 100]
+  return [...[ 255, 255, 0, 100 ], 100]
     }
   }
 
