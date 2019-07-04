@@ -28,18 +28,19 @@ export default class Alice {
 
   where_brett(){
     const brett = this.ladies.find((lady) => lady.name === "Brett");
-    if (!brett){
-      return null
+    //if (!brett){
+    //  return null
     }
+
     var diff = this.lat - brett.lat;
-    return diff
     console.log([this.lat, brett.lat, diff] );
+    return diff
   }
 
   reply(){
       var r = Math.random();
       var i = parseInt(r*255);
-  return [...[ 50, i, 100 ], 100]
+      return [...[ 50, i, 100 ], 100]
     }
   }
 
