@@ -29,7 +29,7 @@ export default class Alice {
     reply(){
   //    var r = Math.random();
   //    var i = parseInt(r*255);
-      return [...[ 255, i, 255, 100 ], 100]
+      return [...[ 255, 0, 150, 100 ], 100]
     }
   }
 
