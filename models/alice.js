@@ -36,9 +36,9 @@ export default class Alice {
 //  }
 
   reply(){
-      var r = Math.random();
-      var i = parseInt(r*255);
-  return [...[ i, 255, 0, 100 ], 100]
+    //  var r = Math.random();
+    //  var i = parseInt(r*255);
+  return [...[ 0, 255, 0, 100 ], 100]
     }
   }
 
