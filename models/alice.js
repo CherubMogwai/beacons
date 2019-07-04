@@ -25,15 +25,15 @@ export default class Alice {
     return diff
   }
 
-  where_brett(){
-    const brett = this.ladies.find((lady) => lady.name === "Brett");
-    if (!brett){
-      return null
-    }
-    var diff = this.lat - brett.lat;
-    console.log([this.lat, brett.lat, diff] );
-    return diff
-  }
+//  where_brett(){
+//    const brett = this.ladies.find((lady) => lady.name === "Brett");
+//    if (!brett){
+//      return null
+//    }
+//    var diff = this.lat - brett.lat;
+//    console.log([this.lat, brett.lat, diff] );
+//    return diff
+//  }
 
   reply(){
       var r = Math.random();
