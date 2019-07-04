@@ -18,18 +18,21 @@ export default class Alice {
   where_janet(){
     const janet = this.ladies.find((lady) => lady.name === "Janet");
     if (!janet){
-      return null
+      return [...[ 255, 255, 0, 100 ], 100]
+      //return null
+      else if (true) {
+        return [...[ 255, 0, 150, 100 ], 100]
+      }
     }
     var diff = this.lat - janet.lat;
     console.log([this.lat, janet.lat, diff] );
     return diff
-
   }
 
-    reply(){
+  //  reply(){
   //    var r = Math.random();
   //    var i = parseInt(r*255);
-      return [...[ 255, 0, 150, 100 ], 100]
+  //    return [...[ 255, 0, 150, 100 ], 100]
     }
   }
 
