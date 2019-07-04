@@ -15,16 +15,16 @@ export default class Alice {
     this.ladies = beacons
   }
 
-//  where_janet(){
-//    const janet = this.ladies.find((lady) => lady.name === "Janet");
-//    if (!janet){
-//      return null
-//    }
+  where_janet(){
+    const janet = this.ladies.find((lady) => lady.name === "Janet");
+    if (!janet){
+      return null
+    }
 
-//    var diff = this.lat - janet.lat;
-//    console.log([this.lat, janet.lat, diff] );
-//    return diff
-//  }
+    var diff = this.lat - janet.lat;
+    console.log([this.lat, janet.lat, diff] );
+    return diff
+  }
 
   where_brett(){
     const brett = this.ladies.find((lady) => lady.name === "Brett");
