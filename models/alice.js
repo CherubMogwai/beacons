@@ -23,6 +23,7 @@ export default class Alice {
 
     var diff = this.lat - janet.lat;
     console.log([this.lat, janet.lat, diff] );
+    console.log("HELLO TEST");
     return diff
   }
 
