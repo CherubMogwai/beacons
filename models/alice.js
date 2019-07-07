@@ -22,7 +22,7 @@ export default class Alice {
     }
 
     var diff = this.lat - janet.lat;
-    console.log([this.lat, janet.lat, diff] );
+    console.log([this.lat, janet.lat, diff]);
     console.log("HELLO TEST");
     return diff
   }
@@ -39,9 +39,15 @@ export default class Alice {
   }
 
   reply(){
-      var r = Math.random();
-      var i = parseInt(r*255);
-      return [...[ 50, i, 100 ], 100]
+    if (this.where_janet && this.where_brett) {
+      return [...[ 0, 255, 0 ], 100]
+        }
+      else {
+      return [...[ 255, 0, 0 ], 100]
+    }
+    //  var r = Math.random();
+    //  var i = parseInt(r*255);
+    //  return [...[ 50, i, 100 ], 100]
     }
   }
 
