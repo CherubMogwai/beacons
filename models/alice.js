@@ -39,14 +39,17 @@ export default class Alice {
 //  }
 
   reply(){
-    if (!this.where_janet) {
-      return [...[ 0, 255, 0 ], 100]
+
+    var r = Math.random();
+    var i = parseInt(r*255);
+
+    if (this.where_janet) {
+      return [...[ 50, i, 100 ], 100]
         }
       else {
       return [...[ 255, 0, 0 ], 100]
     }
-    //  var r = Math.random();
-    //  var i = parseInt(r*255);
+
     //  return [...[ 50, i, 100 ], 100]
     }
   }
