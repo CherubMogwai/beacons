@@ -39,7 +39,7 @@ export default class Alice {
   }
 
   reply(){
-    if (this.where_janet && this.where_brett) {
+    if (where_janet && where_brett) {
       return [...[ 0, 255, 0 ], 100]
         }
       else {
