@@ -30,6 +30,7 @@ return diff
   if (!brett){
   return null
     }
+
     var diff = this.lat - brett.lat;
     console.log([this.lat, brett.lat, diff] );
     return diff
@@ -40,19 +41,21 @@ return diff
     var r = Math.random();
     var i = parseInt(r*255);
 
-    if (diff.where_janet() && (diff.where_brett())) {
+    if (this.where_janet()) {
       return [...[ 50, i, 100 ], 100]
         }
       else {
       return [...[ 255, 0, 0 ], 100]
     }
+
+    //  return [...[ 50, i, 100 ], 100]
     }
   }
 
 //  reply(){
 
   //  var intensity = 10 ;
-//    intensity = 50 - this.where_brett();
-  //  return [...[ 0, 255, 0, intensity ]]
-  //}
+//    intensity = 50 - this.where_janet();
+//    return [...[ 0, 255, 0, intensity ]]
+//  }
 //}
