@@ -47,9 +47,12 @@ var d = R * c;
 var g = R * f;
 var h = (d+g/2);
 
-//  var diff = this.lat - janet.lat;
-//    console.log([this.lat, janet.lat, diff]);
-//    return diff
+console.log([d, g, h]);
+
+
+var diff = this.lat - janet.lat;
+console.log([this.lat, janet.lat, diff]);
+return diff
   }
 
   //where_brett(){
@@ -68,7 +71,7 @@ var h = (d+g/2);
     var r = Math.random();
     var i = parseInt(r*255);
 
-    if (this.where_janet) {
+    if (this.where_janet()) {
       return [...[ 50, i, 100 ], 100]
         }
       else {
