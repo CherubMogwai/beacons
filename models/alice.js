@@ -21,7 +21,7 @@ export default class Alice {
       return null
     }
 var diff = this.lat - janet.lat;
-console.log("Janet"[this.lat, janet.lat, diff]);
+console.log([this.lat, janet.lat, diff]);
 return diff
   }
 
@@ -32,7 +32,7 @@ return diff
     }
 
     var diff = this.lat - brett.lat;
-    console.log("Brett"[this.lat, brett.lat, diff] );
+    console.log([this.lat, brett.lat, diff] );
     return diff
   }
 
