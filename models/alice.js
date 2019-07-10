@@ -35,24 +35,24 @@ return diff
     return diff
   }
 
-  //reply(){
-
-//    var r = Math.random();
-//    var i = parseInt(r*255);
-
-//    if (this.where_janet() && (this.where_brett())) {
-//      return [...[ 50, i, 100 ], 100]
-//        }
-//      else {
-//      return [...[ 255, 0, 0 ], 100]
-//    }
-    //}
-//  }
-
   reply(){
 
-    var intensity = 10 ;
-    intensity = 50 - this.where_brett();
-    return [...[ 0, 255, 0, intensity ]]
+    var r = Math.random();
+    var i = parseInt(r*255);
+
+    if (diff.where_janet() && (diff.where_brett())) {
+      return [...[ 50, i, 100 ], 100]
+        }
+      else {
+      return [...[ 255, 0, 0 ], 100]
+    }
+    }
   }
-}
+
+//  reply(){
+
+  //  var intensity = 10 ;
+//    intensity = 50 - this.where_brett();
+  //  return [...[ 0, 255, 0, intensity ]]
+  //}
+//}
