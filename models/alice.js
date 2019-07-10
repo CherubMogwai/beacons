@@ -36,18 +36,18 @@ export default class Alice {
   reply(){
 
     var r = Math.random();
-    var i = parseInt(r*255);
+    var i = parseInt(r * 255);
 
 
     if (this.get_janet()) {
       var diff = this.where_janet();
+
       if (diff > 170) {
-        return [...[ 50, i, 100 ], 100];
-      } else if (diff > 20  && diff < 90) {
-        return [...[ 50, i, 100 ], 100];
-      }
-      else (diff < 20){
-        return [...[ 250, 0, 0 ], 100];
+        return [ ...[ 50, i, 100 ], 100];
+      } else if ((diff > 20) && (diff < 90)) {
+        return [ ...[ 50, i, 100 ], 100];
+      } else if (diff < 20) {
+        return [ ...[250, 0, 0 ], 100];
       }
     }
     return [...[ 50, i, 100 ], 100];
