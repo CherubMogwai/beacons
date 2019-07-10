@@ -20,7 +20,7 @@ export default class Alice {
     if (!janet){
       return null
     }
-    
+
 var diff = this.lat - janet.lat;
 console.log([this.lat, janet.lat, diff]);
 return diff
@@ -45,7 +45,7 @@ return diff
     if (this.where_janet()) {
       return [...[ 50, i, 100 ], 100]
         }
-      else {
+      else (!this.where_janet()){
       return [...[ 255, 0, 0 ], 100]
     }
 
