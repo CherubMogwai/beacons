@@ -16,15 +16,15 @@ export default class Alice {
   }
 
   where_janet(){ //difference intebnsity
-    const janet = this.get_janet()
+    const janet = this.get_janet();
 
     if (!janet){
       return null
     }
     //
-var diff = this.lat - janet.lat;
-console.log([this.lat, janet.lat, diff]);
-return diff
+    var diff = this.lat - janet.lat;
+    console.log([this.lat, janet.lat, diff]);
+    return diff
   }
 
 
@@ -32,6 +32,7 @@ return diff
     const janet = this.ladies.find((lady) => lady.name === "Janet");
     return janet
   }
+
   reply(){
 
     var r = Math.random();
@@ -39,28 +40,30 @@ return diff
 
 
     if (this.get_janet()) {
-      var diff = this.where_janet()
+      var diff = this.where_janet();
       if (diff > 170) {
-          return [...[ 50, i, 100 ], 100]
+        return [...[ 50, i, 100 ], 100];
       } else if (diff > 20  && diff < 90) {
-        return [...[ 50, i, 100 ], 100]
+        return [...[ 50, i, 100 ], 100];
       }
       else (diff < 20){
-        return [...[ 250, 0, 0 ], 100]
-        }
+        return [...[ 250, 0, 0 ], 100];
+      }
     }
+    return [...[ 50, i, 100 ], 100];
   }
 
-  where_brett(){
-  const brett = this.ladies.find((lady) => lady.name === "Brett");
-  if (!brett){
-  return null
-    }
-
-    var diff = this.lat - brett.lat;
-    console.log([this.lat, brett.lat, diff] );
-    return diff
-  }
+  // where_brett(){
+  // const brett = this.ladies.find((lady) => lady.name === "Brett");
+  // if (!brett){
+  // return null
+  //   }
+  //
+  //   var diff = this.lat - brett.lat;
+  //   console.log([this.lat, brett.lat, diff] );
+  //   return diff
+  // }
+}
 
 //  reply(){
 
