@@ -20,32 +20,30 @@ export default class Alice {
     if (!janet){
       return null
     }
-
 var diff = this.lat - janet.lat;
 console.log([this.lat, janet.lat, diff]);
 return diff
   }
 
-  //where_brett(){
-  //  const brett = this.ladies.find((lady) => lady.name === "Brett");
-  //  if (!brett){
-  //    return null
-//    }
-
-//    var diff = this.lat - brett.lat;
-//    console.log([this.lat, brett.lat, diff] );
-//    return diff
-//  }
+  where_brett(){
+  const brett = this.ladies.find((lady) => lady.name === "Brett");
+  if (!brett){
+  return null
+    }
+    var diff = this.lat - brett.lat;
+    console.log([this.lat, brett.lat, diff] );
+    return diff
+  }
 
   reply(){
 
     var r = Math.random();
     var i = parseInt(r*255);
 
-    if (this.where_janet()) {
+    if (this.where_janet() && (this.where_brett())) {
       return [...[ 50, i, 100 ], 100]
         }
-      else (!this.where_janet()){
+      else {
       return [...[ 255, 0, 0 ], 100]
     }
 
