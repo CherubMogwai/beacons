@@ -124,7 +124,6 @@ export default class Beacon extends Model {
     }
 
     return intensity;
-    console.log(intensity);
 
   }
 
