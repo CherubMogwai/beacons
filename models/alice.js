@@ -59,26 +59,27 @@ export default class Alice {
 
 
     if (this.get_janet()) {
+      return [ ...[250, 0, 0 ], 100];
 
-      if (janetDiff > 170) {
-        return [ ...[ 50, 50, 50 ], 1];
-      } else if ((janetDiff > 20) && (janetDiff < 90)) {
-        return [ ...[ 50, i, 100 ], 100];
-      } else if (janetDiff < 20) {
-        return [ ...[250, 0, 0 ], 100];
-      }
+    //  if (janetDiff > 170) {
+    //    return [ ...[ 50, 50, 50 ], 1];
+    //  } else if ((janetDiff > 20) && (janetDiff < 90)) {
+    //    return [ ...[ 50, i, 100 ], 100];
+    //  } else if (janetDiff < 20) {
+    //    return [ ...[250, 0, 0 ], 100];
     }
-
     else if ((this.get_brett()) && (this.get_janet())) {
-      // if (brettDiff > 170) {
-      //  return [ ...[ 50, 50, 50 ], 1];
-      // } else if ((brettDiff > 20) && (brettDiff < 90)) {
-      //  return [ ...[ 50, i, 100 ], 100];
-      // } else if (brettDiff < 20) {
-        // return [ ...[250, 255, 255 ], 100];
-      // }
-      return [...[ 250, 250, 250 ], 100];
-    }
+        // if (brettDiff > 170) {
+        //  return [ ...[ 50, 50, 50 ], 1];
+        // } else if ((brettDiff > 20) && (brettDiff < 90)) {
+        //  return [ ...[ 50, i, 100 ], 100];
+        // } else if (brettDiff < 20) {
+          // return [ ...[250, 255, 255 ], 100];
+        // }
+        return [...[ 250, 250, 250 ], 100];
+      }
+
+  }
 
     //  else if (this.get_brett()) {
 
@@ -105,7 +106,7 @@ export default class Alice {
   //   console.log([this.lat, brett.lat, diff] );
   //   return diff
   // }
-  }
+  // }
 
 //  reply(){
 
