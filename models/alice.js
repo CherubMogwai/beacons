@@ -22,8 +22,8 @@ export default class Alice {
       return null;
     }
     //
-    var diff = this.lat - janet.lat;
-    console.log([this.lat, janet.lat, diff]);
+    var janet.diff = this.lat - janet.lat;
+    console.log([this.lat, janet.lat, janet.diff]);
     return diff;
   }
 
@@ -34,8 +34,8 @@ export default class Alice {
       return null;
     }
     //
-    var diff = this.lat - brett.lat;
-    console.log([this.lat, brett.lat, diff]);
+    var brett.diff = this.lat - brett.lat;
+    console.log([this.lat, brett.lat, brett.diff]);
     return diff;
   }
 
@@ -44,7 +44,7 @@ export default class Alice {
     return janet;
   }
 
-  get_brett() { // janet is here
+  get_brett() { // brett is here
     const brett = this.ladies.find((lady) => lady.name === "Brett");
     return brett;
   }
