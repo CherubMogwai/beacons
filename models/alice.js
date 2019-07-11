@@ -23,7 +23,7 @@ export default class Alice {
     }
     //
     var janetDiff = this.lat - janet.lat;
-    console.log([this.lat, janet.lat, janetDiff]);
+    console.log([this.lat, janet.lat, janetDiff, brettDiff]);
     return janetDiff;
   }
 
@@ -33,9 +33,9 @@ export default class Alice {
     if (!brett) {
       return null;
     }
-    //
+
     var brettDiff = this.lat - brett.lat;
-    console.log([this.lat, brett.lat, brettDiff]);
+    // console.log([this.lat, brett.lat, brettDiff]);
     return brettDiff;
   }
 
