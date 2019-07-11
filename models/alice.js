@@ -70,14 +70,14 @@ export default class Alice {
     }
 
     else if ((this.get_brett()) && (this.get_janet())) {
-      if (brettDiff > 170) {
-        return [ ...[ 50, 50, 50 ], 1];
-      } else if ((brettDiff > 20) && (brettDiff < 90)) {
-        return [ ...[ 50, i, 100 ], 100];
-      } else if (brettDiff < 20) {
-        return [ ...[250, 255, 255 ], 100];
-      }
-      // return [...[ 250, 250, 250 ], 100];
+      // if (brettDiff > 170) {
+      //  return [ ...[ 50, 50, 50 ], 1];
+      // } else if ((brettDiff > 20) && (brettDiff < 90)) {
+      //  return [ ...[ 50, i, 100 ], 100];
+      // } else if (brettDiff < 20) {
+        // return [ ...[250, 255, 255 ], 100];
+      // }
+      return [...[ 250, 250, 250 ], 100];
     }
 
     //  else if (this.get_brett()) {
