@@ -58,11 +58,11 @@ export default class Alice {
 
       var janetDiff = this.where_janet();
 
-      if (diff > 170) {
+      if (janetDiff > 170) {
         return [ ...[ 50, 50, 50 ], 1];
-      } else if ((diff > 20) && (diff < 90)) {
+      } else if ((janetDiff > 20) && (janetDiff < 90)) {
         return [ ...[ 50, i, 100 ], 100];
-      } else if (diff < 20) {
+      } else if (janetDiff < 20) {
         return [ ...[250, 0, 0 ], 100];
       }
     }
