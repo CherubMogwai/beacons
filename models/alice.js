@@ -21,7 +21,7 @@ export default class Alice {
     if (!janet) {
       return null;
     }
-    //
+
     var janetDiff = this.lat - janet.lat;
     console.log([this.lat, janet.lat, janetDiff]);
     return janetDiff;
@@ -54,9 +54,11 @@ export default class Alice {
     var r = Math.random();
     var i = parseInt(r * 255);
 
-    if (this.get_janet()) {
+    var brettDiff = this.where_brett();
+    var janetDiff = this.where_janet();
 
-      var janetDiff = this.where_janet();
+
+    if (this.get_janet()) {
 
       if (janetDiff > 170) {
         return [ ...[ 50, 50, 50 ], 1];
@@ -65,26 +67,24 @@ export default class Alice {
       } else if (janetDiff < 20) {
         return [ ...[250, 0, 0 ], 100];
       }
+      else if ((this.get_brett()) && (this.get_janet())) {
+        return [...[ 250, 250, 250 ], 100];
+      }
+
+    //  else if (this.get_brett()) {
+
+    //  var brettDiff = this.where_brett();
+
+//    if (brettDiff > 170) {
+//      return [ ...[ 50, 50, 50 ], 1];
+//    } else if ((brettDiff > 20) && (brettDiff < 90)) {
+  //    return [ ...[ 50, i, 100 ], 100];
+  //  } else if (brettDiff < 20) {
+//      return [ ...[250, 0, 0 ], 100];
+//    }
+  // }
+      // return [...[ 60, i, 100 ], 100];
     }
-    else if (this.get_brett()) {
-
-    var brettDiff = this.where_brett();
-
-    if (brettDiff > 170) {
-      return [ ...[ 50, 50, 50 ], 1];
-    } else if ((brettDiff > 20) && (brettDiff < 90)) {
-      return [ ...[ 50, i, 100 ], 100];
-    } else if (brettDiff < 20) {
-      return [ ...[250, 0, 0 ], 100];
-    }
-  }
-
-    else if ((this.get_brett()) && (this.get_janet())) {
-      return [...[ 250, 250, 250 ], 100];
-    }
-
-      return [...[ 60, i, 100 ], 100];
-  }
 
   // where_brett(){
   // const brett = this.ladies.find((lady) => lady.name === "Brett");
@@ -96,7 +96,7 @@ export default class Alice {
   //   console.log([this.lat, brett.lat, diff] );
   //   return diff
   // }
-}
+  }
 
 //  reply(){
 
@@ -104,4 +104,4 @@ export default class Alice {
 //    intensity = 50 - this.where_janet();
 //    return [...[ 0, 255, 0, intensity ]]
 //  }
-// }
+}
