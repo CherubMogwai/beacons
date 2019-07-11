@@ -22,8 +22,8 @@ export default class Alice {
       return null;
     }
     //
-    var janet.diff = this.lat - janet.lat;
-    console.log([this.lat, janet.lat, janet.diff]);
+    var janetDiff = this.lat - janet.lat;
+    console.log([this.lat, janet.lat, diff]);
     return diff;
   }
 
@@ -34,8 +34,8 @@ export default class Alice {
       return null;
     }
     //
-    var brett.diff = this.lat - brett.lat;
-    console.log([this.lat, brett.lat, brett.diff]);
+    var brettDiff = this.lat - brett.lat;
+    console.log([this.lat, brett.lat, brettDiff]);
     return diff;
   }
 
@@ -56,7 +56,7 @@ export default class Alice {
 
     if (this.get_janet()) {
 
-      var diff = this.where_janet();
+      var janetDiff = this.where_janet();
 
       if (diff > 170) {
         return [ ...[ 50, 50, 50 ], 1];
@@ -66,7 +66,7 @@ export default class Alice {
         return [ ...[250, 0, 0 ], 100];
       }
     }
-     return [...[ 50, i, 100 ], 100];
+     return [...[ 60, i, 100 ], 100];
   }
 
   // where_brett(){
