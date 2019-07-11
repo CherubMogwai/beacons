@@ -67,9 +67,18 @@ export default class Alice {
       } else if (janetDiff < 20) {
         return [ ...[250, 0, 0 ], 100];
       }
-      else if ((this.get_brett()) && (this.get_janet())) {
-        return [...[ 250, 250, 250 ], 100];
+    }
+
+    else if ((this.get_brett()) && (this.get_janet())) {
+      if (brettDiff > 170) {
+        return [ ...[ 50, 50, 50 ], 1];
+      } else if ((brettDiff > 20) && (brettDiff < 90)) {
+        return [ ...[ 50, i, 100 ], 100];
+      } else if (brettDiff < 20) {
+        return [ ...[250, 255, 255 ], 100];
       }
+      // return [...[ 250, 250, 250 ], 100];
+    }
 
     //  else if (this.get_brett()) {
 
@@ -84,7 +93,7 @@ export default class Alice {
 //    }
   // }
       // return [...[ 60, i, 100 ], 100];
-    }
+  }
 
   // where_brett(){
   // const brett = this.ladies.find((lady) => lady.name === "Brett");
@@ -104,4 +113,4 @@ export default class Alice {
 //    intensity = 50 - this.where_janet();
 //    return [...[ 0, 255, 0, intensity ]]
 //  }
-}
+// }
