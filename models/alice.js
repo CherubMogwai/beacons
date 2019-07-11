@@ -23,8 +23,8 @@ export default class Alice {
     }
     //
     var janetDiff = this.lat - janet.lat;
-    console.log([this.lat, janet.lat, diff]);
-    return diff;
+    console.log([this.lat, janet.lat, janetDiff]);
+    return janetDiff;
   }
 
   where_brett() { // difference intensity
@@ -36,7 +36,7 @@ export default class Alice {
     //
     var brettDiff = this.lat - brett.lat;
     console.log([this.lat, brett.lat, brettDiff]);
-    return diff;
+    return brettDiff;
   }
 
   get_janet() { // janet is here
