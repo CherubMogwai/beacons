@@ -60,7 +60,6 @@ export default class Alice {
 
     if (this.get_janet()) {
       return [ ...[250, 0, 0 ], 100];
-
     //  if (janetDiff > 170) {
     //    return [ ...[ 50, 50, 50 ], 1];
     //  } else if ((janetDiff > 20) && (janetDiff < 90)) {
@@ -68,8 +67,12 @@ export default class Alice {
     //  } else if (janetDiff < 20) {
     //    return [ ...[250, 0, 0 ], 100];
     }
-    else ((this.get_brett()) && (this.get_janet()));
+    else if (this.get_brett()) {
+      return [...[ 0, 250, 250 ], 100];
+    }
+    else if ((this.get_brett()) && (this.get_janet())) {
       return [...[ 250, 250, 250 ], 100];
+    }
 
         // if (brettDiff > 170) {
         //  return [ ...[ 50, 50, 50 ], 1];
