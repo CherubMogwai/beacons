@@ -23,7 +23,7 @@ export default class Alice {
     }
     //
     var janetDiff = this.lat - janet.lat;
-    console.log([this.lat, janet.lat, janetDiff, brettDiff]);
+    console.log([this.lat, janet.lat, janetDiff]);
     return janetDiff;
   }
 
@@ -35,7 +35,7 @@ export default class Alice {
     }
 
     var brettDiff = this.lat - brett.lat;
-    // console.log([this.lat, brett.lat, brettDiff]);
+    console.log([this.lat, brett.lat, brettDiff]);
     return brettDiff;
   }
 
@@ -51,8 +51,8 @@ export default class Alice {
 
   reply() {
 
-     var r = Math.random();
-     var i = parseInt(r * 255);
+    var r = Math.random();
+    var i = parseInt(r * 255);
 
     if (this.get_janet()) {
 
@@ -66,7 +66,24 @@ export default class Alice {
         return [ ...[250, 0, 0 ], 100];
       }
     }
-     return [...[ 60, i, 100 ], 100];
+    else if (this.get_brett()) {
+
+    var brettDiff = this.where_brett();
+
+    if (brettDiff > 170) {
+      return [ ...[ 50, 50, 50 ], 1];
+    } else if ((brettDiff > 20) && (brettDiff < 90)) {
+      return [ ...[ 50, i, 100 ], 100];
+    } else if (brettDiff < 20) {
+      return [ ...[250, 0, 0 ], 100];
+    }
+  }
+
+    else if ((this.get_brett()) && (this.get_janet())) {
+      return [...[ 250, 250, 250 ], 100];
+    }
+
+      return [...[ 60, i, 100 ], 100];
   }
 
   // where_brett(){
