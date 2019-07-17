@@ -115,4 +115,4 @@ export default class Alice {
 //    return [...[ 0, 255, 0, intensity ]]
 //  }
 // }
-}
+// }
