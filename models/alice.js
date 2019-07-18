@@ -23,12 +23,12 @@ export default class Alice {
     }
 
     var R = 6371e3; // metres
-    var φ1 = this.lat.toRadians();
-    var φ2 = janet.lat.toRadians();
+    var φ1 = this.lat * Math.PI / 180;
+    var φ2 = janet.lat * Math.PI / 180;
     // var φ3 = brett.lat.toRadians();
 
-    var aΔφ = (this.lat - janet.lat).toRadians();
-    var aΔλ = (lng.janet - this.lng).toRadians();
+    var aΔφ = (this.lat - janet.lat) * Math.PI / 180;
+    var aΔλ = (lng.janet - this.lng) * Math.PI / 180;
 
     // var bΔφ = (this.lat - brett.lat).toRadians();
     // var bΔλ = (lng.brett - this.lng).toRadians();
