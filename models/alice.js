@@ -67,7 +67,7 @@ export default class Alice {
     var R = 6371e3; // metres
     var φ1 = this.lat * Math.PI / 180;
     // var φ2 = janet.lat * Math.PI / 180;
-    var φ3 = brett.lat.toRadians();
+    var φ3 = brett.lat * Math.PI / 180;
 
     // var aΔφ = (this.lat - janet.lat) * Math.PI / 180;
     // var aΔλ = (janet.lng - this.lng) * Math.PI / 180;
