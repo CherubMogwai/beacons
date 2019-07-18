@@ -28,7 +28,7 @@ export default class Alice {
     // var φ3 = brett.lat.toRadians();
 
     var aΔφ = (this.lat - janet.lat) * Math.PI / 180;
-    var aΔλ = (lng.janet - this.lng) * Math.PI / 180;
+    var aΔλ = (janet.lng - this.lng) * Math.PI / 180;
 
     // var bΔφ = (this.lat - brett.lat).toRadians();
     // var bΔλ = (lng.brett - this.lng).toRadians();
