@@ -22,10 +22,41 @@ export default class Alice {
       return null;
     }
 
-    var janetDiff = this.lat - janet.lat;
-    console.log([this.lat, janet.lat, janetDiff]);
-    return janetDiff;
+    var R = 6371e3; // metres
+    var φ1 = this.lat.toRadians();
+    var φ2 = janet.lat.toRadians();
+    // var φ3 = brett.lat.toRadians();
+
+    var aΔφ = (this.lat - janet.lat).toRadians();
+    var aΔλ = (lng.janet - this.lng).toRadians();
+
+    // var bΔφ = (this.lat - brett.lat).toRadians();
+    // var bΔλ = (lng.brett - this.lng).toRadians();
+
+    var a = Math.sin(aΔφ / 2) * Math.sin(aΔφ / 2) +
+        Math.cos(φ1) * Math.cos(φ2) *
+        Math.sin(aΔλ / 2) * Math.sin(aΔλ / 2);
+
+    // var e = Math.sin(bΔφ / 2) * Math.sin(bΔφ / 2) +
+        // Math.cos(φ1) * Math.cos(φ3) *
+        // Math.sin(bΔλ / 2) * Math.sin(bΔλ / 2);
+
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    // var f = 2 * Math.atan2(Math.sqrt(e), Math.sqrt(1 - e));
+
+    var d = R * c;
+
+    console.log([this.lat, janet.lat, d]);
+    return d;
+    // var g = R * f;
+    // var h = (d + g / 2);
+
+    // var janetDiff =
+    // this.lat - janet.lat;
+    // console.log([this.lat, janet.lat, janetDiff]);
+    // return janetDiff;
   }
+
 
   where_brett() { // difference intensity
     const brett = this.get_brett();
@@ -49,7 +80,6 @@ export default class Alice {
     return brett;
   }
 
-
   reply() {
 
   //  var r = Math.random();
@@ -71,7 +101,7 @@ export default class Alice {
       return [...[ 255, 255, 255 ], 100];
     } else if  (this.get_brett()) {
       return [...[ 0, 250, 0 ], 100];
-        }
+    }
         // if (brettDiff > 170) {
         //  return [ ...[ 50, 50, 50 ], 1];
         // } else if ((brettDiff > 20) && (brettDiff < 90)) {
@@ -79,7 +109,7 @@ export default class Alice {
         // } else if (brettDiff < 20) {
           // return [ ...[250, 255, 255 ], 100];
         // }
-    }
+  }
 
     //  else if (this.get_brett()) {
 
