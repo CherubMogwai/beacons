@@ -101,6 +101,48 @@ export default class Alice {
     // return brettDiff;
   }
 
+  where_both() { // difference intensity
+    const brett = this.get_brett();
+    const janet = this.get_janet();
+
+    if ((!brett) || (!janet)) {
+      return null;
+    }
+
+    var R = 6371e3; // metres
+    var φ1 = this.lat * Math.PI / 180;
+    var φ2 = janet.lat * Math.PI / 180;
+    var φ3 = brett.lat * Math.PI / 180;
+
+    var aΔφ = (this.lat - janet.lat) * Math.PI / 180;
+    var aΔλ = (janet.lng - this.lng) * Math.PI / 180;
+
+    var bΔφ = (this.lat - brett.lat) * Math.PI / 180;
+    var bΔλ = (brett.lng - this.lng) * Math.PI / 180;
+
+    var a = Math.sin(aΔφ / 2) * Math.sin(aΔφ / 2) +
+        Math.cos(φ1) * Math.cos(φ2) *
+        Math.sin(aΔλ / 2) * Math.sin(aΔλ / 2);
+
+    var e = Math.sin(bΔφ / 2) * Math.sin(bΔφ / 2) +
+         Math.cos(φ1) * Math.cos(φ3) *
+         Math.sin(bΔλ / 2) * Math.sin(bΔλ / 2);
+
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var f = 2 * Math.atan2(Math.sqrt(e), Math.sqrt(1 - e));
+
+    var d = R * c;
+    var g = R * f;
+    var h = (d + g / 2);
+
+    console.log([this.lat, brett.lat, janet.lat, h]);
+    return g;
+
+    // var brettDiff = this.lat - brett.lat;
+    // console.log([this.lat, brett.lat, brettDiff]);
+    // return brettDiff;
+  }
+
   get_janet() { // janet is here
     const janet = this.ladies.find((lady) => lady.name === "Janet");
     return janet;
@@ -111,6 +153,12 @@ export default class Alice {
     return brett;
   }
 
+  get_both() { // brett is here
+    const brett = this.ladies.find((lady) => lady.name === "Brett");
+    const janet = this.ladies.find((lady) => lady.name === "Janet");
+    return both;
+  }
+
   reply() {
 
   //  var r = Math.random();
@@ -118,15 +166,16 @@ export default class Alice {
 
     var brettDiff = this.where_brett();
     var janetDiff = this.where_janet();
+    var bothDiff = this.where_both();
 
 
-    if (this.get_brett()) {
+    if (this.get_both()) {
        // return [ ...[250, 0, 150 ], 100];
-      if (brettDiff < 20) {
+      if (bothDiff < 20) {
         return [ ...[ 250, 0, 0 ], 50];
-      } else if ((brettDiff > 20) && (brettDiff < 100)) {
+      } else if ((bothDiff > 20) && (bothDiff < 100)) {
         return [ ...[ 50, 255, 100 ], 100];
-      } else if (brettDiff > 100) {
+      } else if (bothDiff > 100) {
         return [ ...[250, 255, 255 ], 100];
       }
     // else if (this.get_janet() && (this.get_brett())) {
