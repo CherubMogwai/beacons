@@ -57,7 +57,6 @@ export default class Alice {
     // return janetDiff;
   }
 
-
   where_brett() { // difference intensity
     const brett = this.get_brett();
 
@@ -90,18 +89,19 @@ export default class Alice {
 
 
     if (this.get_janet()) {
-       return [ ...[250, 0, 150 ], 100];
-    //  if (janetDiff < 0) {
-    //    return [ ...[ 250, 0, 0 ], 50];
-    //  } else if ((janetDiff > 0) && (janetDiff < 0.001)) {
-    //    return [ ...[ 50, 255, 100 ], 100];
-  //    } else if (janetDiff > 0.001) {
-    //    return [ ...[250, 255, 255 ], 100];
-    } else if (this.get_janet() && (this.get_brett())) {
-      return [...[ 255, 255, 255 ], 100];
-    } else if  (this.get_brett()) {
-      return [...[ 0, 250, 0 ], 100];
-    }
+       // return [ ...[250, 0, 150 ], 100];
+      if (janetDiff < 20) {
+        return [ ...[ 250, 0, 0 ], 50];
+      } else if ((janetDiff > 20) && (janetDiff < 100)) {
+        return [ ...[ 50, 255, 100 ], 100];
+      } else if (janetDiff > 100) {
+        return [ ...[250, 255, 255 ], 100];
+      }
+    // else if (this.get_janet() && (this.get_brett())) {
+    //  return [...[ 255, 255, 255 ], 100];
+  //  } else if  (this.get_brett()) {
+  //    return [...[ 0, 250, 0 ], 100];
+  //  }
         // if (brettDiff > 170) {
         //  return [ ...[ 50, 50, 50 ], 1];
         // } else if ((brettDiff > 20) && (brettDiff < 90)) {
@@ -109,7 +109,7 @@ export default class Alice {
         // } else if (brettDiff < 20) {
           // return [ ...[250, 255, 255 ], 100];
         // }
-  }
+    }
 
     //  else if (this.get_brett()) {
 
@@ -146,3 +146,4 @@ export default class Alice {
 //  }
 // }
 // }
+}
