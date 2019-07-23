@@ -1,9 +1,9 @@
 export default class Brett {
-  constructor(){
-   this.name = "Brett";
-   this.lat = 0;
-   this.lng = 0;
-   this.ladies = [];
+  constructor() {
+    this.name = "Brett";
+    this.lat = 0;
+    this.lng = 0;
+    this.ladies = [];
   }
   set_lat(lat) {
     this.lat = lat;
@@ -11,13 +11,183 @@ export default class Brett {
   set_lng(lng) {
     this.lng = lng
   }
-  set_ladies(beacons){
+  set_ladies(beacons) {
     this.ladies = beacons
   }
 
-  reply(){
-    var r = Math.random();
-    var i = parseInt(r*255);
-    return [...[ i, 25, 100 ], 100]
+  where_janet() {
+    const janet = this.get_janet();
+
+    if (!janet) {
+      return null;
+    }
+
+    var R = 6371e3; // metres
+    var φ1 = this.lat * Math.PI / 180;
+    var φ2 = janet.lat * Math.PI / 180;
+
+    var aΔφ = (this.lat - janet.lat) * Math.PI / 180;
+    var aΔλ = (janet.lng - this.lng) * Math.PI / 180;
+
+    var a = Math.sin(aΔφ / 2) * Math.sin(aΔφ / 2) +
+         Math.cos(φ1) * Math.cos(φ2) *
+         Math.sin(aΔλ / 2) * Math.sin(aΔλ / 2);
+
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+    var d = R * c;
+
+    console.log([this.lat, janet.lat, d]);
+    return d;
   }
-}
+
+  where_alice() { // difference intensity
+    const alice = this.get_alice();
+
+    if (!alice) {
+      return null;
+    }
+
+    var R = 6371e3; // metres
+    var φ1 = this.lat * Math.PI / 180;
+     // var φ2 = janet.lat * Math.PI / 180;
+    var φ3 = alice.lat * Math.PI / 180;
+
+    var bΔφ = (this.lat - brett.lat) * Math.PI / 180;
+    var bΔλ = (brett.lng - this.lng) * Math.PI / 180;
+
+    var e = Math.sin(bΔφ / 2) * Math.sin(bΔφ / 2) +
+          Math.cos(φ1) * Math.cos(φ3) *
+          Math.sin(bΔλ / 2) * Math.sin(bΔλ / 2);
+
+    var f = 2 * Math.atan2(Math.sqrt(e), Math.sqrt(1 - e));
+
+    var g = R * f;
+
+    console.log([this.lat, brett.lat, g]);
+    return g;
+  }
+
+  where_both() { // difference intensity
+    const brett = this.get_brett();
+    const janet = this.get_janet();
+
+    if ((!brett) || (!janet)) {
+      return null;
+    }
+
+    var R = 6371e3; // metres
+    var φ1 = this.lat * Math.PI / 180;
+    var φ2 = janet.lat * Math.PI / 180;
+    var φ3 = alice.lat * Math.PI / 180;
+
+    var aΔφ = (this.lat - janet.lat) * Math.PI / 180;
+    var aΔλ = (janet.lng - this.lng) * Math.PI / 180;
+
+    var bΔφ = (this.lat - alice.lat) * Math.PI / 180;
+    var bΔλ = (alice.lng - this.lng) * Math.PI / 180;
+
+    var a = Math.sin(aΔφ / 2) * Math.sin(aΔφ / 2) +
+         Math.cos(φ1) * Math.cos(φ2) *
+         Math.sin(aΔλ / 2) * Math.sin(aΔλ / 2);
+
+    var e = Math.sin(bΔφ / 2) * Math.sin(bΔφ / 2) +
+          Math.cos(φ1) * Math.cos(φ3) *
+          Math.sin(bΔλ / 2) * Math.sin(bΔλ / 2);
+
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var f = 2 * Math.atan2(Math.sqrt(e), Math.sqrt(1 - e));
+
+    var d = R * c;
+    var g = R * f;
+    var h = (d + g / 2);
+
+    console.log([this.lat, alice.lat, janet.lat, h]);
+    return g;
+  }
+
+  get_janet() { // janet is here
+    const janet = this.ladies.find((lady) => lady.name === "Janet");
+    return janet;
+  }
+
+  get_alice() { // alice is here
+    const brett = this.ladies.find((lady) => lady.name === "Brett");
+    return brett;
+  }
+
+  get_both() {
+    const alice = this.ladies.find((lady) => lady.name === "Brett");
+    const janet = this.ladies.find((lady) => lady.name === "Janet");
+    return both;
+  }
+
+   reply() {
+
+   //  var r = Math.random();
+   //  var i = parseInt(r * 255);
+
+     var aliceDiff = this.where_alice();
+     var janetDiff = this.where_janet();
+     var bothDiff = this.where_both();
+
+
+     if (this.get_janet()) {
+        // return [ ...[250, 0, 150 ], 100];
+       if (janetDiff < 20) {
+         return [ ...[ 250, 0, 0 ], 50];
+       } else if ((janetDiff > 20) && (janetDiff < 100)) {
+         return [ ...[ 50, 255, 100 ], 100];
+       } else if (janetDiff > 100) {
+         return [ ...[250, 255, 255 ], 100];
+       }
+     // else if (this.get_janet() && (this.get_brett())) {
+     //  return [...[ 255, 255, 255 ], 100];
+   //  } else if  (this.get_brett()) {
+   //    return [...[ 0, 250, 0 ], 100];
+   //  }
+         // if (brettDiff > 170) {
+         //  return [ ...[ 50, 50, 50 ], 1];
+         // } else if ((brettDiff > 20) && (brettDiff < 90)) {
+         //  return [ ...[ 50, i, 100 ], 100];
+         // } else if (brettDiff < 20) {
+           // return [ ...[250, 255, 255 ], 100];
+         // }
+     }
+
+     //  else if (this.get_brett()) {
+
+     //  var brettDiff = this.where_brett();
+
+ //    if (brettDiff > 170) {
+ //      return [ ...[ 50, 50, 50 ], 1];
+ //    } else if ((brettDiff > 20) && (brettDiff < 90)) {
+   //    return [ ...[ 50, i, 100 ], 100];
+   //  } else if (brettDiff < 20) {
+ //      return [ ...[250, 0, 0 ], 100];
+ //    }
+   // }
+       // return [...[ 60, i, 100 ], 100];
+   }
+
+   // where_brett(){
+   // const brett = this.ladies.find((lady) => lady.name === "Brett");
+   // if (!brett){
+   // return null
+   //   }
+   //
+   //   var diff = this.lat - brett.lat;
+   //   console.log([this.lat, brett.lat, diff] );
+   //   return diff
+   // }
+   // }
+
+ //  reply(){
+
+   //  var intensity = 10 ;
+ //    intensity = 50 - this.where_janet();
+ //    return [...[ 0, 255, 0, intensity ]]
+ //  }
+ // }
+ // }
+ }
