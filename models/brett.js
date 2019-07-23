@@ -112,12 +112,12 @@ export default class Brett {
   }
 
   get_alice() { // alice is here
-    const brett = this.ladies.find((lady) => lady.name === "Brett");
+    const brett = this.ladies.find((lady) => lady.name === "Alice");
     return brett;
   }
 
   get_both() {
-    const alice = this.ladies.find((lady) => lady.name === "Brett");
+    const alice = this.ladies.find((lady) => lady.name === "Alice");
     const janet = this.ladies.find((lady) => lady.name === "Janet");
     return both;
   }
