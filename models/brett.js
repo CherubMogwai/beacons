@@ -64,15 +64,15 @@ export default class Brett {
 
     var g = R * f;
 
-    console.log([this.lat, brett.lat, g]);
+    console.log([this.lat, alice.lat, g]);
     return g;
   }
 
   where_both() { // difference intensity
-    const brett = this.get_brett();
+    const alice = this.get_alice();
     const janet = this.get_janet();
 
-    if ((!brett) || (!janet)) {
+    if ((!alice) || (!janet)) {
       return null;
     }
 
@@ -112,8 +112,8 @@ export default class Brett {
   }
 
   get_alice() { // alice is here
-    const brett = this.ladies.find((lady) => lady.name === "Alice");
-    return brett;
+    const alice = this.ladies.find((lady) => lady.name === "Alice");
+    return alice;
   }
 
   get_both() {
