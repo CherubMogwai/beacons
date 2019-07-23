@@ -54,7 +54,7 @@ export default class Brett {
     var φ3 = alice.lat * Math.PI / 180;
 
     var bΔφ = (this.lat - alice.lat) * Math.PI / 180;
-    var bΔλ = (brett.lng - this.lng) * Math.PI / 180;
+    var bΔλ = (alice.lng - this.lng) * Math.PI / 180;
 
     var e = Math.sin(bΔφ / 2) * Math.sin(bΔφ / 2) +
           Math.cos(φ1) * Math.cos(φ3) *
