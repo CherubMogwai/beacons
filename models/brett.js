@@ -164,12 +164,12 @@ export default class Brett {
 
      //  var brettDiff = this.where_brett();
 
-    if (bothDiff > 170) {
+    if (janetDiff > 170) {
       return [ ...[ 255, 155, 50 ], 1];
-    } else if ((bothDiff > 20) && (bothDiff < 90)) {
-      return [ ...[ 255, 155, 50 ], t];
-    } else if (bothDiff < 20) {
-      return [ ...[250, 255, 255 ], t];
+    } else if ((janetDiff > 20) && (janetDiff < 90)) {
+      return [ ...[ 255, 155, 50 ], s];
+    } else if (janetDiff < 20) {
+      return [ ...[250, 155, 50 ], s];
     }
    // }
        // return [...[ 60, i, 100 ], 100];
