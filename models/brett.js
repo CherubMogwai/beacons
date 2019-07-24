@@ -117,13 +117,13 @@ export default class Brett {
     return alice;
   }
 
-  get_both() {
-    const alice = this.ladies.find((lady) => lady.name === "Alice");
-    const janet = this.ladies.find((lady) => lady.name === "Janet");
-    return both;
-  }
+//  get_both() {
+//    const alice = this.ladies.find((lady) => lady.name === "Alice");
+  //  const janet = this.ladies.find((lady) => lady.name === "Janet");
+//    return both;
+//  }
 
-   reply() {
+  reply() {
 
    //  var r = Math.random();
    //  var i = parseInt(r * 255);
