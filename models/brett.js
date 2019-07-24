@@ -128,20 +128,20 @@ export default class Brett {
    //  var r = Math.random();
    //  var i = parseInt(r * 255);
 
-     var aliceDiff = this.where_alice();
-     var janetDiff = this.where_janet();
-     var bothDiff = this.where_both();
+  //  var aliceDiff = this.where_alice();
+  //  var janetDiff = this.where_janet();
+    var bothDiff = this.where_both();
 
 
-     if (this.get_both()) {
+      //if (this.get_both()) {
         // return [ ...[250, 0, 150 ], 100];
-       if (bothDiff < 20) {
-         return [ ...[ 250, 0, 0 ], 50];
-       } else if ((bothDiff > 20) && (bothDiff < 100)) {
-         return [ ...[ 50, 255, 100 ], 100];
-       } else if (bothDiff > 100) {
-         return [ ...[250, 255, 255 ], 100];
-       }
+       //if (bothDiff < 20) {
+         //return [ ...[ 250, 0, 0 ], 50];
+       //} else if ((bothDiff > 20) && (bothDiff < 100)) {
+        // return [ ...[ 50, 255, 100 ], 100];
+       //} else if (bothDiff > 100) {
+        // return [ ...[250, 255, 255 ], 100];
+       //}
      // else if (this.get_janet() && (this.get_brett())) {
      //  return [...[ 255, 255, 255 ], 100];
    //  } else if  (this.get_brett()) {
@@ -154,22 +154,22 @@ export default class Brett {
          // } else if (brettDiff < 20) {
            // return [ ...[250, 255, 255 ], 100];
          // }
-     }
+     // }
 
      //  else if (this.get_brett()) {
 
      //  var brettDiff = this.where_brett();
 
- //    if (brettDiff > 170) {
- //      return [ ...[ 50, 50, 50 ], 1];
- //    } else if ((brettDiff > 20) && (brettDiff < 90)) {
-   //    return [ ...[ 50, i, 100 ], 100];
-   //  } else if (brettDiff < 20) {
- //      return [ ...[250, 0, 0 ], 100];
- //    }
+    if (bothDiff > 170) {
+      return [ ...[ 50, 50, 50 ], 1];
+    } else if ((bothDiff > 20) && (bothDiff < 90)) {
+      return [ ...[ 50, i, 100 ], 100];
+    } else if (bothDiff < 20) {
+      return [ ...[250, 0, 0 ], 100];
+    }
    // }
        // return [...[ 60, i, 100 ], 100];
-   }
+  }
 
    // where_brett(){
    // const brett = this.ladies.find((lady) => lady.name === "Brett");
