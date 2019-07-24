@@ -103,7 +103,8 @@ export default class Brett {
     var h = (d + g / 2);
 
     console.log([this.lat, alice.lat, janet.lat, h]);
-    return g;
+    // return g;
+    return h;
   }
 
   get_janet() { // janet is here
@@ -132,13 +133,13 @@ export default class Brett {
      var bothDiff = this.where_both();
 
 
-     if (this.get_janet()) {
+     if (this.get_both()) {
         // return [ ...[250, 0, 150 ], 100];
-       if (janetDiff < 20) {
+       if (bothDiff < 20) {
          return [ ...[ 250, 0, 0 ], 50];
-       } else if ((janetDiff > 20) && (janetDiff < 100)) {
+       } else if ((bothDiff > 20) && (bothDiff < 100)) {
          return [ ...[ 50, 255, 100 ], 100];
-       } else if (janetDiff > 100) {
+       } else if (bothDiff > 100) {
          return [ ...[250, 255, 255 ], 100];
        }
      // else if (this.get_janet() && (this.get_brett())) {
