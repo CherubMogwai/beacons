@@ -123,12 +123,12 @@ export default class Brett {
 
   reply() {
 
-    // var r = Math.random();
-    // var i = parseInt(r * 255);
+     var r = Math.random();
+     var i = parseInt(r * 255);
 
     // var r = parseInt(this.where_alice());
     // var i = parseInt(r / 100);
-    var r = parseInt(this.where_alice() / 100 );
+    var k = parseInt(this.where_alice() / 100 );
     var s = parseInt(this.where_janet() / 100 );
     var t = parseInt(this.where_both() / 100 );
 
@@ -167,9 +167,9 @@ export default class Brett {
     if (janetDiff > 170) {
       return [ ...[ 255, 155, 50 ], 1];
     } else if ((janetDiff > 20) && (janetDiff < 90)) {
-      return [ ...[ 255, 155, 50 ], s];
+      return [ ...[ 255, 155, 50 ], 50];
     } else if (janetDiff < 20) {
-      return [ ...[250, 155, 50 ], s];
+      return [ ...[250, i, 50 ], 100];
     }
    // }
        // return [...[ 60, i, 100 ], 100];
