@@ -117,7 +117,7 @@ export default class Brett {
     return alice;
   }
 
-//  get_both() {
+//  get_both() {  // this wasnt needed
 //    const alice = this.ladies.find((lady) => lady.name === "Alice");
   //  const janet = this.ladies.find((lady) => lady.name === "Janet");
 //    return both;
@@ -125,8 +125,8 @@ export default class Brett {
 
   reply() {
 
-   //  var r = Math.random();
-   //  var i = parseInt(r * 255);
+     var r = Math.random();
+     var i = parseInt(r * 255);
 
     var aliceDiff = this.where_alice();
     var janetDiff = this.where_janet();
