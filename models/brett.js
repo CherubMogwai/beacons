@@ -128,8 +128,8 @@ export default class Brett {
     // var r = Math.random();
     // var i = parseInt(r * 255);
 
-    var r = parseInt(this.where_alice().target.value);
-    var i = parseInt(r / 100);
+    var r = parseInt(this.where_alice().target.value) / 100;
+  //  var i = parseInt(r / 100);
 
     var aliceDiff = this.where_alice();
     var janetDiff = this.where_janet();
@@ -166,11 +166,11 @@ export default class Brett {
      //  var brettDiff = this.where_brett();
 
     if (janetDiff > 170) {
-      return [ ...[ 255, 155, 50 ], 1];
+      return [ ...[ 255, 155, 50 ], r];
     } else if ((janetDiff > 20) && (janetDiff < 90)) {
-      return [ ...[ 255, 155, 50 ], i];
+      return [ ...[ 255, 155, 50 ], r];
     } else if (janetDiff < 20) {
-      return [ ...[250, 155, 50 ], i];
+      return [ ...[250, 155, 50 ], r];
     }
    // }
        // return [...[ 60, i, 100 ], 100];
