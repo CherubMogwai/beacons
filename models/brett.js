@@ -128,7 +128,7 @@ export default class Brett {
     // var r = Math.random();
     // var i = parseInt(r * 255);
 
-    var r = parseInt(this.where_alice().target.value) / 100;
+    var r = parseInt(this.where_alice().target.value);
   //  var i = parseInt(r / 100);
 
     var aliceDiff = this.where_alice();
