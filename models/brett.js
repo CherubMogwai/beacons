@@ -129,9 +129,7 @@ export default class Brett {
     // var i = parseInt(r * 255);
 
     var r = parseInt(this.where_alice().target.value);
-    var i = parseInt(r * 255);
-
-    console.log([r]);
+    var i = parseInt(r / 100);
 
     var aliceDiff = this.where_alice();
     var janetDiff = this.where_janet();
