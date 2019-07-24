@@ -170,7 +170,7 @@ export default class Brett {
     } else if ((janetDiff > 20) && (janetDiff < 90)) {
       return [ ...[ 255, 155, 50 ], 50];
     } else if (janetDiff < 20) {
-      return [ ...[250, 155, 50 ], s];
+      return [ ...[250, 155, 50 ], 50];
     }
    // }
        // return [...[ 60, i, 100 ], 100];
