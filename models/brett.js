@@ -34,7 +34,6 @@ export default class Brett {
          Math.sin(aΔλ / 2) * Math.sin(aΔλ / 2);
 
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
     var d = R * c;
 
     console.log([this.lat, janet.lat, d]);
@@ -61,7 +60,6 @@ export default class Brett {
           Math.sin(bΔλ / 2) * Math.sin(bΔλ / 2);
 
     var f = 2 * Math.atan2(Math.sqrt(e), Math.sqrt(1 - e));
-
     var g = R * f;
 
     console.log([this.lat, alice.lat, g]);
@@ -128,8 +126,8 @@ export default class Brett {
     // var r = Math.random();
     // var i = parseInt(r * 255);
 
-    var r = parseInt(this.where_alice().target.value);
-    var i = parseInt(r / 255);
+    var r = parseInt(this.where_alice());
+    var i = parseInt(r / 100);
 
     var aliceDiff = this.where_alice();
     var janetDiff = this.where_janet();
@@ -168,9 +166,9 @@ export default class Brett {
     if (janetDiff > 170) {
       return [ ...[ 255, 155, 50 ], 1];
     } else if ((janetDiff > 20) && (janetDiff < 90)) {
-      return [ ...[ 255, 155, 50 ], 100];
+      return [ ...[ 255, 155, 50 ], r];
     } else if (janetDiff < 20) {
-      return [ ...[250, i, 50 ], 25];
+      return [ ...[250, 155, 50 ], r];
     }
    // }
        // return [...[ 60, i, 100 ], 100];
