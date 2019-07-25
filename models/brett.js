@@ -98,7 +98,7 @@ export default class Brett {
 
     var d = R * c;
     var g = R * f;
-    var h = (d + g / 2);
+    var h = (Math.floor(d + g / 2));
 
 console.log(["Both = ", h, "meters"]);
     // return g;
@@ -129,9 +129,9 @@ console.log(["Both = ", h, "meters"]);
     // var r = parseInt(this.where_alice());
     // var i = parseInt(r / 100);
 
-    var k = parseInt(this.where_alice() * 100 );
+    var k = (this.where_alice() * 100 );
     var s = (this.where_janet() * 100 );
-    var t = parseInt(this.where_both() * 100 );
+    var t = (this.where_both() * 100 );
 
     var aliceDiff = this.where_alice();
     var janetDiff = this.where_janet();
