@@ -36,7 +36,7 @@ export default class Brett {
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = R * c;
 
-    console.log([this.lat, janet.lat, d]);
+    console.log(["Janet", this.lat, janet.lat, d]);
     return d;
   }
 
@@ -62,7 +62,7 @@ export default class Brett {
     var f = 2 * Math.atan2(Math.sqrt(e), Math.sqrt(1 - e));
     var g = R * f;
 
-    console.log([this.lat, alice.lat, g]);
+    console.log(["Alice", this.lat, alice.lat, g]);
     return g;
   }
 
@@ -100,7 +100,7 @@ export default class Brett {
     var g = R * f;
     var h = (d + g / 2);
 
-    console.log([this.lat, alice.lat, janet.lat, h]);
+console.log(["Both",this.lat, alice.lat, janet.lat, h]);
     // return g;
     return h;
   }
