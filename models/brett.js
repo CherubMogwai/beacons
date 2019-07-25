@@ -129,24 +129,32 @@ console.log(["Both = ", h, "meters"]);
     // var r = parseInt(this.where_alice());
     // var i = parseInt(r / 100);
 
-    var k = parseInt(this.where_alice() * 255 );
+    var k = parseInt(this.where_alice() * 100 );
     var s = (this.where_janet() * 100 );
-    var t = parseInt(this.where_both() * 255 );
+    var t = parseInt(this.where_both() * 100 );
 
     var aliceDiff = this.where_alice();
     var janetDiff = this.where_janet();
     var bothDiff = this.where_both();
 
-
-      //if (this.get_both()) {
+    if (janetDiff > 170) {
+      return [ ...[ 255, 155, 50 ], 1];
+    } else if ((janetDiff > 20) && (janetDiff < 90)) {
+      return [ ...[ 255, 0, 255 ], s];
+    } else if (janetDiff < 20) {
+      return [ ...[250, 150, 50 ], s];
+    }
+  }
+}
+      // if (this.get_both()) {
         // return [ ...[250, 0, 150 ], 100];
-       //if (bothDiff < 20) {
-         //return [ ...[ 250, 0, 0 ], 50];
-       //} else if ((bothDiff > 20) && (bothDiff < 100)) {
+       // if (bothDiff < 20) {
+         // return [ ...[ 250, 0, 0 ], 50];
+       // }else if ((bothDiff > 20) && (bothDiff < 100)) {
         // return [ ...[ 50, 255, 100 ], 100];
-       //} else if (bothDiff > 100) {
+       // }else if (bothDiff > 100) {
         // return [ ...[250, 255, 255 ], 100];
-       //}
+       // }
      // else if (this.get_janet() && (this.get_brett())) {
      //  return [...[ 255, 255, 255 ], 100];
    //  } else if  (this.get_brett()) {
@@ -165,16 +173,6 @@ console.log(["Both = ", h, "meters"]);
 
      //  var brettDiff = this.where_brett();
 
-    if (janetDiff > 170) {
-      return [ ...[ 255, 155, 50 ], 1];
-    } else if ((janetDiff > 20) && (janetDiff < 90)) {
-      return [ ...[ 255, 0, 255 ], s];
-    } else if (janetDiff < 20) {
-      return [ ...[250, 150, 50 ], 100];
-    }
-   // }
-       // return [...[ 60, i, 100 ], 100];
-  }
 
    // where_brett(){
    // const brett = this.ladies.find((lady) => lady.name === "Brett");
@@ -196,4 +194,3 @@ console.log(["Both = ", h, "meters"]);
  //  }
  // }
  // }
- }
