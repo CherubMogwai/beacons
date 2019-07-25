@@ -35,9 +35,10 @@ export default class Brett {
 
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = (Math.floor(R * c));
+    var m = d.reverse();
 
-    console.log(["Janet =", d, "meters"]);
-    return d;
+    console.log(["Janet =", m, d, "meters"]);
+    return m;
   }
 
   where_alice() { // difference intensity
@@ -131,7 +132,7 @@ console.log(["Both = ", h, "meters"]);
 
     var k = (this.where_alice() );
     var s = (this.where_janet() );
-    var t = (this.where_both()  );
+    var t = (this.where_both() );
 
     var aliceDiff = this.where_alice();
     var janetDiff = this.where_janet();
