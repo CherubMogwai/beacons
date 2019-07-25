@@ -36,7 +36,7 @@ export default class Brett {
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = R * c;
 
-    console.log(["Janet", this.lat, janet.lat, d]);
+    console.log(["Janet =", d, "meters"]);
     return d;
   }
 
@@ -62,7 +62,7 @@ export default class Brett {
     var f = 2 * Math.atan2(Math.sqrt(e), Math.sqrt(1 - e));
     var g = R * f;
 
-    console.log(["Alice", this.lat, alice.lat, g]);
+    console.log(["Alice = ", g, "meters"]);
     return g;
   }
 
@@ -100,7 +100,7 @@ export default class Brett {
     var g = R * f;
     var h = (d + g / 2);
 
-console.log(["Both",this.lat, alice.lat, janet.lat, h]);
+console.log(["Both = ", h, "meters"]);
     // return g;
     return h;
   }
@@ -130,7 +130,7 @@ console.log(["Both",this.lat, alice.lat, janet.lat, h]);
     // var i = parseInt(r / 100);
 
     var k = parseInt(this.where_alice() * 255 );
-    var s = (this.where_janet() * 255 );
+    var s = (this.where_janet() * 100 );
     var t = parseInt(this.where_both() * 255 );
 
     var aliceDiff = this.where_alice();
@@ -165,12 +165,12 @@ console.log(["Both",this.lat, alice.lat, janet.lat, h]);
 
      //  var brettDiff = this.where_brett();
 
-    if (bothDiff > 170) {
+    if (janetDiff > 170) {
       return [ ...[ 255, 155, 50 ], 1];
-    } else if ((bothDiff > 20) && (bothDiff < 90)) {
-      return [ ...[ 255, 155, 50 ], 50];
-    } else if (bothDiff < 20) {
-      return [ ...[250, t, 50 ], 50];
+    } else if ((janetDiff > 20) && (janetDiff < 90)) {
+      return [ ...[ 255, 0, 255 ], s];
+    } else if (janetDiff < 20) {
+      return [ ...[250, 150, 50 ], 100];
     }
    // }
        // return [...[ 60, i, 100 ], 100];
