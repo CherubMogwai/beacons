@@ -34,7 +34,7 @@ export default class Brett {
          Math.sin(aΔλ / 2) * Math.sin(aΔλ / 2);
 
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c;
+    var d = (Math.floor(R * c));
 
     console.log(["Janet =", d, "meters"]);
     return d;
@@ -60,7 +60,7 @@ export default class Brett {
           Math.sin(bΔλ / 2) * Math.sin(bΔλ / 2);
 
     var f = 2 * Math.atan2(Math.sqrt(e), Math.sqrt(1 - e));
-    var g = R * f;
+    var g = (Math.floor(R * f));
 
     console.log(["Alice = ", g, "meters"]);
     return g;
@@ -129,17 +129,17 @@ console.log(["Both = ", h, "meters"]);
     // var r = parseInt(this.where_alice());
     // var i = parseInt(r / 100);
 
-    var k = (this.where_alice() * 100 );
-    var s = (this.where_janet() * 100 );
-    var t = (this.where_both() * 100 );
+    var k = (this.where_alice() );
+    var s = (this.where_janet() );
+    var t = (this.where_both()  );
 
     var aliceDiff = this.where_alice();
     var janetDiff = this.where_janet();
     var bothDiff = this.where_both();
 
-    if (janetDiff > 170) {
+    if (janetDiff > 100) {
       return [ ...[ 255, 155, 50 ], 1];
-    } else if ((janetDiff > 20) && (janetDiff < 90)) {
+    } else if ((janetDiff > 20) && (janetDiff < 100)) {
       return [ ...[ 255, 0, 255 ], s];
     } else if (janetDiff < 20) {
       return [ ...[250, 150, 50 ], s];
