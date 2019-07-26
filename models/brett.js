@@ -100,7 +100,7 @@ export default class Brett {
     var g = R * f;
     var h = (Math.floor((d + g) / 2));
 
-console.log(["Both = ", h, "meters"]);
+    console.log(["Both = ", h, "meters"]);
     // return g;
     return h;
   }
@@ -139,9 +139,7 @@ console.log(["Both = ", h, "meters"]);
 
     if (janetDiff > 100) {
       return [ ...[ 255, 155, 50 ], 1];
-    } else if ((janetDiff > 20) && (janetDiff < 100)) {
-      return [ ...[ 255, 0, 255 ], s];
-    } else if (janetDiff < 20) {
+    } else if (janetDiff < 100) {
       return [ ...[250, 150, 50 ], s];
     }
   }
