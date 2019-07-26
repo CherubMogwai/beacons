@@ -98,7 +98,7 @@ export default class Brett {
 
     var d = R * c;
     var g = R * f;
-    var h = (Math.floor(d + g / 2));
+    var h = (Math.floor((d + g) / 2));
 
 console.log(["Both = ", h, "meters"]);
     // return g;
