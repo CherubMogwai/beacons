@@ -137,9 +137,9 @@ export default class Brett {
     var janetDiff = this.where_janet();
     var bothDiff = this.where_both();
 
-    if (janetDiff > 100) {
+    if (s > 100) {
       return [ ...[ 255, 155, 50 ], 1];
-    } else if (janetDiff < 100) {
+    } else if (s < 100) {
       return [ ...[250, 150, 50 ], s];
     }
   }
