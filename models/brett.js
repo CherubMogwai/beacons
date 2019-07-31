@@ -178,8 +178,10 @@ export default class Brett {
     var bothBrett = this.brett_both();
 
     if (s > 100) {
+      console.log([ janetBrett, aliceBrett, bothBrett ]);
       return [ ...[ 255, 0, 0 ], 1];
     } else if (s < 100) {
+      console.log([ janetBrett, aliceBrett, bothBrett ]);
       return [ ...[ janetBrett, aliceBrett, bothBrett ], s];
     }
   }
