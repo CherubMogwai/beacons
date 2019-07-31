@@ -119,7 +119,7 @@ export default class Brett {
     const janet = this.get_janet();
 
     if (!janet) {
-      return null;
+      return 0;
     }
 
     var j = 250;
@@ -132,7 +132,7 @@ export default class Brett {
     const alice = this.get_alice();
 
     if (!alice) {
-      return null;
+      return 0;
     }
 
     var p = 250;
@@ -146,7 +146,7 @@ export default class Brett {
     const janet = this.get_janet();
 
     if ((!alice) || (!janet)) {
-      return null;
+      return 0;
     }
 
     var q = 250;
