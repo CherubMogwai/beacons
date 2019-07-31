@@ -120,25 +120,22 @@ export default class Brett {
 
     if (!janet) {
       return 0;
+    } else {
+      console.log(["Janet is here", brett_janet]);
+      return 250;
     }
-
-    var j = 250;
-
-    console.log(["Janet is here", j ]);
-    return j;
   }
+
 
   brett_alice() {
     const alice = this.get_alice();
 
     if (!alice) {
       return 0;
+    } else {
+      console.log(["Alice is here", brett_alice ]);
+      return 250;
     }
-
-    var p = 250;
-
-    console.log(["Alice is here", p ]);
-    return p;
   }
 
   brett_both() {
@@ -147,12 +144,11 @@ export default class Brett {
 
     if ((!alice) || (!janet)) {
       return 0;
+    } else {
+      console.log(["Both are here", brett_both ]);
+      return 250;
+
     }
-
-    var q = 250;
-
-    console.log(["Both are here", q ]);
-    return q;
   }
 
 //  get_both() {  // this wasnt needed
