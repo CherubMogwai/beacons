@@ -116,42 +116,47 @@ export default class Brett {
   }
 
   brett_janet() {
-    const janet = this.get_janet();
+    var janet1 = where_alice();
 
-    if (!janet) {
-      console.log(["Janet is not here", 0]);
+    if (janet1 < 100) {
+      console.log(["Janet is here", 255 ]);
+      return 255;
+    } else if (janet1 > 100) {
+      console.log(["Janet is not here", 0 ]);
       return 0;
     }
-    var v = 250;
-    console.log(["Alice is here", v ]);
-    return v;
   }
 
   brett_alice() {
-    const alice = this.get_alice();
+    var alice1 = where_alice();
 
-    if (!alice) {
-      console.log(["Alice is not here" ]);
+    if (alice1 < 100) {
+      console.log(["Alice is here", 255 ]);
+      return 255;
+    } else if (alice1 > 100) {
+      console.log(["Alice is not here", 0 ]);
       return 0;
     }
-
-    var q = 250;
-    console.log(["Alice is here", q ]);
-    return q;
   }
 
   brett_both() {
-    const alice = this.get_alice();
-    const janet = this.get_janet();
+    // const alice = this.get_alice();
+  //   const janet = this.get_janet();
 
-    if ((!alice) || (!janet)) {
-      console.log(["Both are not here" ]);
-      return null;
+  //  if ((!alice) || (!janet)) {
+  //    console.log(["Both are not here" ]);
+  //    return null;
+//    }
+
+    var both = where_both();
+
+    if (both < 100) {
+      console.log(["Both are here", 255 ]);
+      return 255;
+    } else if (both > 100) {
+      console.log(["Both are not here", both ]);
+      return both;
     }
-
-    var p = 250;
-    console.log(["Both are here", p ]);
-    return p;
 
   }
 
