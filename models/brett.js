@@ -116,7 +116,7 @@ export default class Brett {
   }
 
   brett_janet() {
-    var janet1 = where_alice();
+    var janet1 = where_janet();
 
     if (janet1 < 100) {
       console.log(["Janet is here", 255 ]);
