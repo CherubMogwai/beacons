@@ -115,6 +115,46 @@ export default class Brett {
     return alice;
   }
 
+  brett_janet() {
+    const janet = this.get_janet();
+
+    if (!janet) {
+      return null;
+    }
+
+    var j = 250;
+
+    console.log(["Janet is here", j ]);
+    return j;
+  }
+
+  brett_alice() {
+    const janet = this.get_alice();
+
+    if (!alice) {
+      return null;
+    }
+
+    var p = 250;
+
+    console.log(["Alice is here", p ]);
+    return p;
+  }
+
+  brett_both() {
+    const alice = this.get_alice();
+    const janet = this.get_janet();
+
+    if ((!alice) || (!janet)) {
+      return null;
+    }
+
+    var q = 250;
+
+    console.log(["Both are here", q ]);
+    return q;
+  }
+
 //  get_both() {  // this wasnt needed
 //    const alice = this.ladies.find((lady) => lady.name === "Alice");
   //  const janet = this.ladies.find((lady) => lady.name === "Janet");
@@ -133,14 +173,14 @@ export default class Brett {
     var s = (this.where_janet() );
     var t = (this.where_both() );
 
-    var aliceDiff = this.where_alice();
-    var janetDiff = this.where_janet();
-    var bothDiff = this.where_both();
+    var aliceBrett = this.brett_alice();
+    var janetBrett = this.brett_janet();
+    var bothBrett = this.brett_both();
 
     if (s > 100) {
-      return [ ...[ 255, 155, 50 ], 1];
+      return [ ...[ 255, 0, 0 ], 1];
     } else if (s < 100) {
-      return [ ...[250, 150, 50 ], s];
+      return [ ...[ janetBrett, aliceBrett, bothBrett ], s];
     }
   }
 }
