@@ -129,7 +129,7 @@ export default class Brett {
   }
 
   brett_alice() {
-    const janet = this.get_alice();
+    const alice = this.get_alice();
 
     if (!alice) {
       return null;
