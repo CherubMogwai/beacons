@@ -119,9 +119,10 @@ export default class Brett {
     const janet = this.get_janet();
 
     if (!janet) {
+      console.log(["Janet is not here", 0]);
       return 0;
     } else {
-      console.log(["Janet is here", brett_janet]);
+      console.log(["Janet is here", 250]);
       return 250;
     }
   }
@@ -132,8 +133,9 @@ export default class Brett {
 
     if (!alice) {
       return 0;
+      console.log(["Alice is not here", 0 ]);
     } else {
-      console.log(["Alice is here", brett_alice ]);
+      console.log(["Alice is here", 250 ]);
       return 250;
     }
   }
@@ -143,9 +145,10 @@ export default class Brett {
     const janet = this.get_janet();
 
     if ((!alice) || (!janet)) {
+      console.log(["Both are not here", 0]);
       return 0;
     } else {
-      console.log(["Both are here", brett_both ]);
+      console.log(["Both are here", 250]);
       return 250;
 
     }
