@@ -121,22 +121,23 @@ export default class Brett {
     if (!janet) {
       console.log(["Janet is not here", 0]);
       return 0;
-    } else if (janet) {
-      console.log(["Janet is here", 250]);
-      return 250;
     }
+    var v = 250;
+    console.log(["Alice is here", v ]);
+    return v;
   }
 
   brett_alice() {
     const alice = this.get_alice();
 
     if (!alice) {
+      console.log(["Alice is not here" ]);
       return 0;
-      console.log(["Alice is not here", 0 ]);
-    } else if (alice) {
-      console.log(["Alice is here", 250 ]);
-      return 250;
     }
+
+    var q = 250;
+    console.log(["Alice is here", q ]);
+    return q;
   }
 
   brett_both() {
@@ -144,12 +145,14 @@ export default class Brett {
     const janet = this.get_janet();
 
     if ((!alice) || (!janet)) {
-      console.log(["Both are not here", 0]);
-      return 0;
-    } else if ((alice) && (janet)) {
-      console.log(["Both are here", 250]);
-      return 250;
+      console.log(["Both are not here" ]);
+      return null;
     }
+
+    var p = 250;
+    console.log(["Both are here", p ]);
+    return p;
+
   }
 
 //  get_both() {  // this wasnt needed
