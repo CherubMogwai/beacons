@@ -43,30 +43,30 @@ export default class Janet {
     }
 
   where_alice() { // difference intensity
-      const alice = this.get_alice();
+    const alice = this.get_alice();
 
-      if (!alice) {
-        return null;
-      }
+    if (!alice) {
+      return null;
+    }
 
-      var R = 6371e3; // metres
-      var φ1 = this.lat * Math.PI / 180;
+    var R = 6371e3; // metres
+    var φ1 = this.lat * Math.PI / 180;
        // var φ2 = brett.lat * Math.PI / 180;
-      var φ3 = alice.lat * Math.PI / 180;
+    var φ3 = alice.lat * Math.PI / 180;
 
-      var bΔφ = (this.lat - alice.lat) * Math.PI / 180;
-      var bΔλ = (alice.lng - this.lng) * Math.PI / 180;
+    var bΔφ = (this.lat - alice.lat) * Math.PI / 180;
+    var bΔλ = (alice.lng - this.lng) * Math.PI / 180;
 
-      var e = Math.sin(bΔφ / 2) * Math.sin(bΔφ / 2) +
+    var e = Math.sin(bΔφ / 2) * Math.sin(bΔφ / 2) +
             Math.cos(φ1) * Math.cos(φ3) *
             Math.sin(bΔλ / 2) * Math.sin(bΔλ / 2);
 
-      var f = 2 * Math.atan2(Math.sqrt(e), Math.sqrt(1 - e));
-      var g = (Math.floor(R * f));
+    var f = 2 * Math.atan2(Math.sqrt(e), Math.sqrt(1 - e));
+    var g = (Math.floor(R * f));
 
-      console.log(["Alice = ", g, "meters"]);
-      return g;
-    }
+    console.log(["Alice = ", g, "meters"]);
+    return g;
+  }
 
   where_both() { // difference intensity
     const alice = this.get_alice();
@@ -129,17 +129,17 @@ export default class Janet {
     }
   }
 
-  janet_alice() {
-    var alice1 = where_alice();
-
-    if (alice1 < 100) {
-      console.log(["Alice is here", 255 ]);
-      return 255;
-    } else if (alice1 > 100) {
-      console.log(["Alice is not here", 0 ]);
-      return 0;
-    }
-  }
+  // janet_alice() {
+  //   var alice1 = where_alice();
+  //
+  //   if (alice1 < 100) {
+  //     console.log(["Alice is here", 255 ]);
+  //     return 255;
+  //   } else if (alice1 > 100) {
+  //     console.log(["Alice is not here", 0 ]);
+  //     return 0;
+  //   }
+  // }
 
   janet_both() {
 
@@ -160,7 +160,6 @@ export default class Janet {
       console.log(["Both are not here", both ]);
       return both;
     }
-
   }
 
  reply() {
@@ -169,16 +168,16 @@ export default class Janet {
    var s = (this.where_brett() );
    var t = (this.where_both() );
 
-   var aliceJanet = this.janet_alice();
+   //var aliceJanet = this.janet_alice();
    var brettJanet = this.janet_brett();
    var bothJanet = this.janet_both();
 
    if (s > 100) {
-     console.log([ brettJanet, aliceJanet, bothJanet ]);
+     console.log([ brettJanet, "Alice placeholder", bothJanet ]);
      return [ ...[ 255, 0, 0 ], 1];
    } else if (s < 100) {
-     console.log([ brettJanet, aliceJanet, bothJanet ]);
-     return [ ...[ brettJanet, aliceJanet, bothJanet ], s];
+     console.log([ brettJanet, "Alice placeholder", bothJanet ]);
+     return [ ...[ brettJanet, 255, bothJanet ], s];
    }
  }
 }
