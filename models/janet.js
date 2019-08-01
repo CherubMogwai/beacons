@@ -16,7 +16,7 @@ export default class Janet {
   set_ladies(beacons){
     this.ladies = beacons;
   }
-  
+
     where_brett() {
       const brett = this.get_brett();
 
@@ -78,7 +78,7 @@ export default class Janet {
 
     var R = 6371e3; // metres
     var φ1 = this.lat * Math.PI / 180;
-    var φ2 = janet.lat * Math.PI / 180;
+    var φ2 = brett.lat * Math.PI / 180;
     var φ3 = alice.lat * Math.PI / 180;
 
     var aΔφ = (this.lat - brett.lat) * Math.PI / 180;
@@ -146,7 +146,7 @@ export default class Janet {
       // const alice = this.get_alice();
     //   const brett = this.get_brett();
 
-    //  if ((!alice) || (!janet)) {
+    //  if ((!alice) || (!brett)) {
     //    console.log(["Both are not here" ]);
     //    return null;
   //    }
