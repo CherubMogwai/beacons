@@ -117,67 +117,19 @@ export default class Janet {
     return alice;
   }
 
-  janet_brett() {
-    var brett1 = where_brett();
 
-    if (brett1 < 100) {
-      console.log(["Brett is here", 255 ]);
-      return 255;
-    } else if (brett1 > 100) {
-      console.log(["Brett is not here", 0 ]);
-      return 0;
-    }
-  }
-
-  // janet_alice() {
-  //   var alice1 = where_alice();
-  //
-  //   if (alice1 < 100) {
-  //     console.log(["Alice is here", 255 ]);
-  //     return 255;
-  //   } else if (alice1 > 100) {
-  //     console.log(["Alice is not here", 0 ]);
-  //     return 0;
-  //   }
-  // }
-
-  janet_both() {
-
-      // const alice = this.get_alice();
-    //   const brett = this.get_brett();
-
-    //  if ((!alice) || (!brett)) {
-    //    console.log(["Both are not here" ]);
-    //    return null;
-  //    }
-
-    var both = where_both();
-
-    if (both < 100) {
-      console.log(["Both are here", 255 ]);
-      return 255;
-    } else if (both > 100) {
-      console.log(["Both are not here", both ]);
-      return both;
-    }
-  }
-
- reply() {
+  reply() {
 
    var k = (this.where_alice() );
    var s = (this.where_brett() );
    var t = (this.where_both() );
 
-   //var aliceJanet = this.janet_alice();
-   var brettJanet = this.janet_brett();
-   var bothJanet = this.janet_both();
-
    if (s > 100) {
-     console.log([ brettJanet, "Alice placeholder", bothJanet ]);
+     console.log([ "Alice =", k, "Brett =", s, "Both =", t ]);
      return [ ...[ 255, 0, 0 ], 1];
    } else if (s < 100) {
-     console.log([ brettJanet, "Alice placeholder", bothJanet ]);
-     return [ ...[ brettJanet, 255, bothJanet ], s];
+     console.log([ "Alice =", k, "Brett =", s, "Both =", t ]);
+     return [ ...[ 255, 255, 0 ], s];
    }
  }
 }
