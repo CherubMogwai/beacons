@@ -117,19 +117,24 @@ export default class Janet {
     return alice;
   }
 
-
   reply() {
 
-   var k = (this.where_alice() );
-   var s = (this.where_brett() );
-   var t = (this.where_both() );
+    var k = (this.where_alice() );
+    var s = (this.where_brett() );
+    var t = (this.where_both() );
 
-   if (s > 100) {
-     console.log([ "Alice =", k, "Brett =", s, "Both =", t ]);
-     return [ ...[ 255, 0, 0 ], 1];
-   } else if (s < 100) {
-     console.log([ "Alice =", k, "Brett =", s, "Both =", t ]);
-     return [ ...[ 255, 255, 0 ], s];
-   }
- }
+    if ((s > 100) && (k > 100) && (t > 100)) {
+      console.log([ "No one is here" ]);
+      return [ ...[ 255, 0, 0 ], 1];
+    } else if ((s < 100) && (k > 100) && (t > 100)) {
+      console.log([ "Brett is here" ]);
+      return [ ...[ 255, 255, 0 ], s];
+    } else if ((s > 100) && (k < 100) && (t > 100)) {
+      console.log([ "Alice is here" ]);
+      return [ ...[ 255, 0, 150 ], k];
+    } else if ((s < 100) && (k < 100) && (t < 100)) {
+      console.log([ "Both are here" ]);
+      return [ ...[ 255, 255, 255 ], t];
+    }
+  }
 }
