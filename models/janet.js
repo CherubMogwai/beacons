@@ -42,7 +42,7 @@ export default class Janet {
       return d;
     }
 
-    where_alice() { // difference intensity
+  where_alice() { // difference intensity
       const alice = this.get_alice();
 
       if (!alice) {
@@ -51,7 +51,7 @@ export default class Janet {
 
       var R = 6371e3; // metres
       var φ1 = this.lat * Math.PI / 180;
-       // var φ2 = janet.lat * Math.PI / 180;
+       // var φ2 = brett.lat * Math.PI / 180;
       var φ3 = alice.lat * Math.PI / 180;
 
       var bΔφ = (this.lat - alice.lat) * Math.PI / 180;
@@ -118,12 +118,12 @@ export default class Janet {
   }
 
   janet_brett() {
-    var janet1 = where_brett();
+    var brett1 = where_brett();
 
-    if (janet1 < 100) {
+    if (brett1 < 100) {
       console.log(["Brett is here", 255 ]);
       return 255;
-    } else if (janet1 > 100) {
+    } else if (brett1 > 100) {
       console.log(["Brett is not here", 0 ]);
       return 0;
     }
