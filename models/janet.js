@@ -169,9 +169,9 @@ export default class Janet {
    var s = (this.where_brett() );
    var t = (this.where_both() );
 
-   var aliceJanet = this.brett_alice();
-   var brettJanet = this.brett_brett();
-   var bothJanet = this.brett_both();
+   var aliceJanet = this.janet_alice();
+   var brettJanet = this.janet_brett();
+   var bothJanet = this.janet_both();
 
    if (s > 100) {
      console.log([ brettJanet, aliceJanet, bothJanet ]);
