@@ -14,6 +14,7 @@ export default class Brett {
   set_ladies(beacons) {
     this.ladies = beacons
   }
+
   where_janet() {
     const janet = this.get_janet();
 
@@ -67,7 +68,7 @@ export default class Brett {
 
   where_both() { // difference intensity
     const alice = this.get_alice();
-    const janet = this.get_brett();
+    const janet = this.get_janet();
 
     if ((!alice) || (!janet)) {
       return null;
@@ -104,7 +105,7 @@ export default class Brett {
     return h;
   }
 
-  get_brett() { // brett is here
+  get_janet() { // janet is here
     const janet = this.ladies.find((lady) => lady.name === "Janet");
     return janet;
   }
