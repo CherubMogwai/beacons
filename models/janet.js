@@ -128,7 +128,7 @@ export default class Janet {
       return [ ...[ 255, 0, 0 ], 1];
     } else if ((s < 100) && (k > 100) && (t > 100)) {
       console.log([ "Brett is here" ]);
-      return [ ...[ 255, 255, 0 ], s];
+      return [ ...[ 255, 0, 255 ], s];
     } else if ((s > 100) && (k < 100) && (t > 100)) {
       console.log([ "Alice is here" ]);
       return [ ...[ 255, 0, 150 ], k];
