@@ -119,22 +119,22 @@ export default class Janet {
 
   reply() {
 
-    var k = (this.where_alice() );
+  //  var k = (this.where_alice() );
     var s = (this.where_brett() );
-    var t = (this.where_both() );
+  //  var t = (this.where_both() );
 
-    if ((s > 100) && (k > 100) && (t > 100)) {
+    if ((s > 100)) {
       console.log([ "No one is here" ]);
-      return [ ...[ 255, 0, 0 ], 1];
-    } else if ((s < 100) && (k > 100) && (t > 100)) {
+      return [ ...[ 255, 0, 0 ], 100];
+    } else if ((s < 100) && (s > 50)) {
+      console.log([ "Brett is nearby" ]);
+      return [ ...[ 255, 255, 0 ], s];
+    } else if ((s < 50) && (s > 25)) {
+      console.log([ "Brett is closer" ]);
+      return [ ...[ 255, 255, 125 ], s];
+    } else if ((s < 25)) {
       console.log([ "Brett is here" ]);
-      return [ ...[ 255, 0, 255 ], s];
-    } else if ((s > 100) && (k < 100) && (t > 100)) {
-      console.log([ "Alice is here" ]);
-      return [ ...[ 255, 0, 150 ], k];
-    } else if ((s < 100) && (k < 100) && (t < 100)) {
-      console.log([ "Both are here" ]);
-      return [ ...[ 255, 255, 255 ], t];
+      return [ ...[ 255, 255, 255 ], 100];
     }
   }
 }
