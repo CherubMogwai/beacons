@@ -117,22 +117,22 @@ export default class Brett {
 
   reply() {
 
-    var k = (this.where_alice() );
+    //var k = (this.where_alice() );
     var s = (this.where_janet() );
-    var t = (this.where_both() );
+    //var t = (this.where_both() );
 
-    if ((s > 100) && (k > 100) && (t > 100)) {
-      console.log([ "No one is here" ]);
+    if ((s > 100)) {
+      console.log([ "Janet is not here" ]);
       return [ ...[ 255, 0, 0 ], 1];
-    } else if ((s < 100) && (k > 100) && (t > 100)) {
-      console.log([ "Janet is here" ]);
+    } else if ((s < 100)) {
+      console.log([ "Janet is nearby" ]);
       return [ ...[ 255, 0, 255 ], s];
-    } else if ((s > 100) && (k < 100) && (t > 100)) {
-      console.log([ "Alice is here" ]);
-      return [ ...[ 255, 255, 0 ], k];
-    } else if ((s < 100) && (k < 100) && (t < 100)) {
-      console.log([ "Both are here" ]);
-      return [ ...[ 255, 255, 255 ], t];
+    } else if ((s < 100) && (s > 25)) {
+      console.log([ "Janet is closer" ]);
+      return [ ...[ 255, 150, 255 ], s];
+    } else if ((s < 50)) {
+      console.log([ "Janet is here" ]);
+      return [ ...[ 255, 255, 255 ], 100];
     }
   }
 }
