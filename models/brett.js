@@ -130,7 +130,7 @@ export default class Brett {
     } else if ((s < 100) && (s > 25)) {
       console.log([ "Janet is closer" ]);
       return [ ...[ 255, 150, 255 ], s];
-    } else if ((s < 50)) {
+    } else if ((s < 25)) {
       console.log([ "Janet is here" ]);
       return [ ...[ 255, 255, 255 ], 100];
     }
