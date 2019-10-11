@@ -124,16 +124,22 @@ export default class Janet {
   //  var t = (this.where_both() );
 
     if ((s > 100)) {
-      console.log([ "No one is here" ]);
-      return [ ...[ 255, 0, 0 ], 100];
-    } else if ((s < 100) && (s > 50)) {
-      console.log([ "Brett is nearby" ]);
+      console.log([ "No one is here red" ]);
+      return [ ...[ 255, 0, 0 ], 1];
+    } else if ((s < 100) && (s > 85)) {
+      console.log([ "Brett is nearby purple" ]);
+      return [ ...[ 255, 0, 255 ], s];
+    } else if ((s < 85) && (s > 65)) {
+      console.log([ "Brett is closer pink" ]);
+      return [ ...[ 255, 155, 155 ], s];
+    } else if ((s < 65) && (s > 45)) {
+      console.log([ "Brett is closer orange" ]);
+      return [ ...[ 255, 155, 0 ], s];
+    } else if ((s < 45) && (s > 20)) {
+      console.log([ "Brett is closer gold" ]);
       return [ ...[ 255, 255, 0 ], s];
-    } else if ((s < 50) && (s > 25)) {
-      console.log([ "Brett is closer" ]);
-      return [ ...[ 255, 255, 125 ], s];
-    } else if ((s < 25)) {
-      console.log([ "Brett is here" ]);
+    } else if ((s < 20)) {
+      console.log([ "Brett is here white" ]);
       return [ ...[ 255, 255, 255 ], 100];
     }
   }
