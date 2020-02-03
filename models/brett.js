@@ -132,7 +132,7 @@ export default class Brett {
     return [ ...[ 255, 155, 155 ], s];
   } else if ((s < 65) && (s > 45)) {
     console.log([ "Janet is closer orange" ]);
-    return [ ...[ 255, 155, 0 ], s];
+    return [ ...[ 254, 155, 0 ], s];
   } else if ((s < 45) && (s > 20)) {
     console.log([ "Janet is closer gold" ]);
     return [ ...[ 255, 255, 0 ], s];
