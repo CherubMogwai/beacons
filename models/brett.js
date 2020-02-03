@@ -126,7 +126,7 @@ export default class Brett {
     return [ ...[ 255, 0, 0 ], 1];
   } else if ((s < 100) && (s > 85)) {
     console.log([ "Janet is nearby purple" ]);
-    return [ ...[ 255, 0, 255 ], s];
+    return [ ...[ 254, 0, 255 ], s];
   } else if ((s < 85) && (s > 65)) {
     console.log([ "Janet is closer pink" ]);
     return [ ...[ 255, 155, 155 ], s];
