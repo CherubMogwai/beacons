@@ -5,11 +5,11 @@
   "main": "index.js",
   "directories": {
     "doc": "docs"
-    "engines": {
-      "node": "10.15.3"
-      "npm": "6.4.1"
   },
-
+  "engines": {
+    "node": "10.15.3"
+    "npm": "6.4.1"
+  }
   "scripts": {
     "test": "NODE_ENV=test NODE_PATH=./ NODE_CONFIG_DIR=../config nyc ava",
     "report": "nyc report --reporter=html",
