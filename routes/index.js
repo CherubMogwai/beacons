@@ -6,7 +6,7 @@ import Alice  from 'models/alice';
 import Model from 'models';
 
 const NAMES = {
-  "3e0035000b51343334363138": "Alice",
+  "e00fce680b3065fc268242a2": "Alice",
   "420023000c51343334363138": "Janet",
   "1d0053000c51343334363138": "Brett",
 }
