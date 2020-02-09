@@ -117,9 +117,9 @@ export default class Brett {
 
   reply() {
 
-    //var k = (this.where_alice() );
+    var k = (this.where_alice() );
     var s = (this.where_janet() );
-  //  var t = (this.where_both() );
+    var t = (this.where_both() );
 
   if ((s > 100)) {
     console.log([ "No one is here red" ]);
