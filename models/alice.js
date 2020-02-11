@@ -115,34 +115,36 @@ where_janet() { // difference intensity
     return janet;
   }
 
-  reply() {
+     reply(){
+       var r = Math.random();
+       var i = parseInt(r*255);
+       return [...[ i, 25, 100 ], 100]
+     }
+   }
 
-    var k = (this.where_janet() );
-    var s = (this.where_brett() );
-    var t = (this.where_both() );
+  //reply() {
 
-    if ((s > 100) && (k > 100) && (t > 100)) {
-      console.log([ "No one is here" ]);
-      return [ ...[ 255, 0, 0 ], 1];
-    } else if ((s < 100) && (k > 100) && (t > 100)) {
-      console.log([ "Brett is here" ]);
-      return [ ...[ 255, 255, 0 ], s];
-    } else if ((s > 100) && (k < 100) && (t > 100)) {
-      console.log([ "Janet is here" ]);
-      return [ ...[ 255, 0, 150 ], k];
-    } else if ((s < 100) && (k < 100) && (t < 100)) {
-      console.log([ "Both are here" ]);
-      return [ ...[ 255, 255, 255 ], t];
-    }
-  }
-}
+    //var k = (this.where_janet() );
+  //  var s = (this.where_brett() );
+  //  var t = (this.where_both() );
 
-//   reply(){
-//     var r = Math.random();
-//     var i = parseInt(r*255);
-//     return [...[ i, 25, 100 ], 100]
-//   }
-// }
+  //  if ((s > 100) && (k > 100) && (t > 100)) {
+  //    console.log([ "No one is here" ]);
+  //    return [ ...[ 255, 0, 0 ], 1];
+  //  } else if ((s < 100) && (k > 100) && (t > 100)) {
+  //    console.log([ "Brett is here" ]);
+  //    return [ ...[ 255, 255, 0 ], s];
+  //  } else if ((s > 100) && (k < 100) && (t > 100)) {
+  //    console.log([ "Janet is here" ]);
+  //    return [ ...[ 255, 0, 150 ], k];
+  //  } else if ((s < 100) && (k < 100) && (t < 100)) {
+  //    console.log([ "Both are here" ]);
+  //    return [ ...[ 255, 255, 255 ], t];
+  //  }
+//  }
+//}
+
+
 
 // export default class Alice {
 //   constructor() {
