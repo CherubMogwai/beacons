@@ -129,7 +129,7 @@ export default class Brett {
       return [ ...[ 255, 255, 0 ], s];
     } else if ((s > 100) && (k < 100) && (t > 100)) {
       console.log([ "Alice is here" ]);
-      return [ ...[ 255, 0, 150 ], k];
+      return [ ...[ 255, 0, 0 ], k];
     } else if ((s < 100) && (k < 100) && (t < 100)) {
       console.log([ "Both are here" ]);
       return [ ...[ 255, 255, 255 ], t];
