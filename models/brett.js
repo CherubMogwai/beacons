@@ -12,7 +12,7 @@ export default class Brett {
     this.lng = lng
   }
   set_ladies(beacons) {
-    this.ladies = beacons
+    this.ladies = beacons;
   }
 
   where_janet() {

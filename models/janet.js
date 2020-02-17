@@ -1,12 +1,10 @@
-
 export default class Janet {
-  constructor(){
+  constructor() {
     this.name = "Janet";
     this.lat = 0;
     this.lng = 0;
     this.ladies = [];
   }
-
   set_lat(lat) {
     this.lat = lat;
   }
