@@ -12,7 +12,7 @@ export default class Brett {
     this.lng = lng
   }
   set_ladies(beacons) {
-    this.ladies = beacons;
+    this.ladies = beacons
   }
 
   where_janet() {
@@ -117,23 +117,29 @@ export default class Brett {
 
   reply() {
 
-    var k = (this.where_alice() );
+    //var k = (this.where_alice() );
     var s = (this.where_janet() );
-    var t = (this.where_both() );
+  //  var t = (this.where_both() );
 
-    if ((s > 100) && (k > 100) && (t > 100)) {
-      console.log([ "No one is here" ]);
-      return [ ...[ 255, 0, 0 ], 1];
-    } else if ((s < 100) && (k > 100) && (t > 100)) {
-      console.log([ "Janet is here" ]);
-      return [ ...[ 255, 255, 0 ], s];
-    } else if ((s > 100) && (k < 100) && (t > 100)) {
-      console.log([ "Alice is here" ]);
-      return [ ...[ 255, 0, 0 ], k];
-    } else if ((s < 100) && (k < 100) && (t < 100)) {
-      console.log([ "Both are here" ]);
-      return [ ...[ 255, 255, 255 ], t];
-    }
+  if ((s > 100)) {
+    console.log([ "No one is here red" ]);
+    return [ ...[ 255, 0, 0 ], 1];
+  } else if ((s < 100) && (s > 85)) {
+    console.log([ "Janet is nearby purple" ]);
+    return [ ...[ 255, 0, 255 ], s];
+  } else if ((s < 85) && (s > 65)) {
+    console.log([ "Janet is closer pink" ]);
+    return [ ...[ 255, 155, 155 ], s];
+  } else if ((s < 65) && (s > 45)) {
+    console.log([ "Janet is closer orange" ]);
+    return [ ...[ 254, 155, 0 ], s];
+  } else if ((s < 45) && (s > 20)) {
+    console.log([ "Janet is closer gold" ]);
+    return [ ...[ 255, 255, 0 ], s];
+  } else if ((s < 20)) {
+    console.log([ "Janet is here white" ]);
+    return [ ...[ 255, 255, 255 ], 100];
+  }
   }
 }
 

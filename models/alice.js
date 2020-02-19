@@ -12,7 +12,7 @@ export default class Alice {
     this.lng = lng
   }
   set_ladies(beacons) {
-    this.ladies = beacons;
+    this.ladies = beacons
   }
 
   where_brett() {
@@ -115,17 +115,16 @@ where_janet() { // difference intensity
     return janet;
   }
 
-//reply(){
-//       var p = Math.random();
-  //     var i = parseInt(p*255);
-  //     return [...[ i, 25, 100 ], 100];
-  //      console.log([ "No one is here" ]);
-//     }
+    // reply(){
+    //   var r = Math.random();
+    //   var i = parseInt(r*255);
+      // return [...[ i, 25, 100 ], 100]
+  //   }
 //   }
 
   reply() {
 
-  var k = (this.where_janet() );
+    var k = (this.where_janet() );
     var s = (this.where_brett() );
     var t = (this.where_both() );
 
