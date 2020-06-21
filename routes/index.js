@@ -2,6 +2,7 @@ import { beacons as config } from 'config';
 import Brett from 'models/brett';
 import Janet  from 'models/janet';
 import Alice  from 'models/alice';
+import Garance  from 'models/garance';
 
 import Model from 'models';
 
