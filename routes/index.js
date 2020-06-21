@@ -9,11 +9,13 @@ const NAMES = {
   "e00fce680b3065fc268242a2": "Alice",
   "420023000c51343334363138": "Janet",
   "1d0053000c51343334363138": "Brett",
+  "e00fce68a140f586ed09a7b6": "Garance"
 }
 const Beacons = {
   "Janet": new Janet(),
   "Alice": new Alice(),
   "Brett": new Brett(),
+  "Garance": new Garance(),
 }
 
 export default function(router) {
@@ -51,7 +53,7 @@ export default function(router) {
     const current = Beacons[Name]
     current.set_lat(lat);
     current.set_lng(lng);
-    current.set_ladies([Beacons["Alice"], Beacons["Janet"], Beacons["Brett"]]);
+    current.set_ladies([Beacons["Alice"], Beacons["Janet"], Beacons["Brett"], Beacons["Garance"]]);
     const response = current.reply();
 
     ctx.body = response.join(',');

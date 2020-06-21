@@ -115,13 +115,6 @@ where_janet() { // difference intensity
     return janet;
   }
 
-    // reply(){
-    //   var r = Math.random();
-    //   var i = parseInt(r*255);
-      // return [...[ i, 25, 100 ], 100]
-  //   }
-//   }
-
   reply() {
 
     var k = (this.where_janet() );
@@ -144,7 +137,12 @@ where_janet() { // difference intensity
   }
 }
 
-
+// reply(){
+//   var r = Math.random();
+//   var i = parseInt(r*255);
+  // return [...[ i, 25, 100 ], 100]
+//   }
+//   }
 
 // export default class Alice {
 //   constructor() {
