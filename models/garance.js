@@ -123,7 +123,7 @@ export default class Garance {
 
   if ((s > 100)) {
     console.log([ "No one is here red" ]);
-    return [ ...[ 255, 0, 0 ], 1];
+    return [ ...[ 255, 255, 0 ], 100];
   } else if ((s < 100) && (s > 85)) {
     console.log([ "Janet is nearby purple" ]);
     return [ ...[ 255, 0, 255 ], s];
