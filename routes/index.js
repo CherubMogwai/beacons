@@ -10,13 +10,15 @@ const NAMES = {
   "e00fce680b3065fc268242a2": "Alice",
   "420023000c51343334363138": "Janet",
   "1d0053000c51343334363138": "Brett",
-  "e00fce68a140f586ed09a7b6": "Garance"
+  "e00fce68a140f586ed09a7b6": "Garance",
+  "e00fce6863fc99f591485187": "Hollis"
 }
 const Beacons = {
   "Janet": new Janet(),
   "Alice": new Alice(),
   "Brett": new Brett(),
   "Garance": new Garance(),
+  "Hollis": new Hollis(),
 }
 
 export default function(router) {
