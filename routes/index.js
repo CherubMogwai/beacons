@@ -3,6 +3,7 @@ import Brett from 'models/brett';
 import Janet  from 'models/janet';
 import Alice  from 'models/alice';
 import Garance  from 'models/garance';
+import Hollis  from 'models/hollis';
 
 import Model from 'models';
 
@@ -11,7 +12,7 @@ const NAMES = {
   "420023000c51343334363138": "Janet",
   "1d0053000c51343334363138": "Brett",
   "e00fce68a140f586ed09a7b6": "Garance",
-  "e00fce6863fc99f591485187": "Hollis"
+  "e00fce6863fc99f591485187": "Hollis",
 }
 const Beacons = {
   "Janet": new Janet(),
