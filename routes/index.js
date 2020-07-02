@@ -56,7 +56,7 @@ export default function(router) {
     const current = Beacons[Name]
     current.set_lat(lat);
     current.set_lng(lng);
-    current.set_ladies([Beacons["Alice"], Beacons["Janet"], Beacons["Brett"], Beacons["Garance"]]);
+    current.set_ladies([Beacons["Alice"], Beacons["Janet"], Beacons["Brett"], Beacons["Garance"], Beacons["Hollis"]]);
     const response = current.reply();
 
     ctx.body = response.join(',');
