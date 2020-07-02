@@ -1,9 +1,9 @@
 import { beacons as config } from 'config';
 import Brett from 'models/brett';
-import Janet  from 'models/janet';
-import Alice  from 'models/alice';
-import Garance  from 'models/garance';
-import Hollis  from 'models/hollis';
+import Janet from 'models/janet';
+import Alice from 'models/alice';
+import Garance from 'models/garance';
+import Hollis from 'models/hollis';
 
 import Model from 'models';
 
@@ -19,7 +19,7 @@ const Beacons = {
   "Alice": new Alice(),
   "Brett": new Brett(),
   "Garance": new Garance(),
-  "Hollis": new Hollis(),
+  "Hollis": new Hollis()
 }
 
 export default function(router) {
