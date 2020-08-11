@@ -77,7 +77,7 @@ where_hollis() { // difference intensity
 
     var R = 6371e3; // metres
     var φ1 = this.lat * Math.PI / 180;
-    var φ2 = garnance.lat * Math.PI / 180;
+    var φ2 = garance.lat * Math.PI / 180;
     var φ3 = hollis.lat * Math.PI / 180;
 
     var aΔφ = (this.lat - garance.lat) * Math.PI / 180;
