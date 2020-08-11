@@ -38,11 +38,7 @@ export default class Alice {
 
     console.log(["Brett =", d, "meters"]);
 
-    if (d > 12000000) {
-      return 0;
-    } else {
-      return d;
-    }
+    return d;
   }
 
 where_janet() { // difference intensity
@@ -126,7 +122,7 @@ where_janet() { // difference intensity
     var s = (this.where_brett() );
     var t = (this.where_both() );
 
-    if ((s = 0) && (k > 100) && (t > 100)) {
+    if ((s > 100) && (k > 100) && (t > 100)) {
       console.log([ "No one is here" ]);
       return [ ...[ 255, 0, 0 ], 1];
     } else if ((s < 100) && (k > 100) && (t > 100)) {
