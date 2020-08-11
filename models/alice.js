@@ -36,7 +36,7 @@ export default class Alice {
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = (Math.floor(R * c));
     var q = function (){
-      if (d > 12000000)
+      if (d > 1200000)
       return 0;
       else {
         return d;
