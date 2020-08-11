@@ -42,9 +42,9 @@ export default class Alice {
   }
 
 where_hollis() { // difference intensity
-  const janet = this.get_hollis();
+  const hollis = this.get_hollis();
 
-  if (!janet) {
+  if (!hollis) {
     return null;
   }
 
@@ -111,7 +111,7 @@ where_hollis() { // difference intensity
     return garance;
   }
 
-  get_hollis() { // janet is here
+  get_hollis() { // hollis is here
     const hollis = this.ladies.find((lady) => lady.name === "Hollis");
     return hollis;
   }
