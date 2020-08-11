@@ -15,19 +15,19 @@ export default class Alice {
     this.ladies = beacons
   }
 
-  where_brett() {
-    const brett = this.get_brett();
+  where_garance() {
+    const garance = this.get_garance();
 
-    if (!brett) {
+    if (!garance) {
       return null;
     }
 
     var R = 6371e3; // metres
     var φ1 = this.lat * Math.PI / 180;
-    var φ2 = brett.lat * Math.PI / 180;
+    var φ2 = garance.lat * Math.PI / 180;
 
-    var aΔφ = (this.lat - brett.lat) * Math.PI / 180;
-    var aΔλ = (brett.lng - this.lng) * Math.PI / 180;
+    var aΔφ = (this.lat - garance.lat) * Math.PI / 180;
+    var aΔλ = (garance.lng - this.lng) * Math.PI / 180;
 
     var a = Math.sin(aΔφ / 2) * Math.sin(aΔφ / 2) +
          Math.cos(φ1) * Math.cos(φ2) *
@@ -35,23 +35,14 @@ export default class Alice {
 
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = (Math.floor(R * c));
-    var q = function (){
-      if (d > 1200000)
-      return 0;
-      else {
-        return d;
-      }
-    }
 
-
-
-    console.log(["Brett =", q, "meters"]);
+    console.log(["Garance =", d, "meters"]);
 
     return d;
   }
 
-where_janet() { // difference intensity
-  const janet = this.get_janet();
+where_hollis() { // difference intensity
+  const janet = this.get_hollis();
 
   if (!janet) {
     return null;
@@ -59,11 +50,11 @@ where_janet() { // difference intensity
 
   var R = 6371e3; // metres
   var φ1 = this.lat * Math.PI / 180;
-     // var φ2 = brett.lat * Math.PI / 180;
-  var φ3 = janet.lat * Math.PI / 180;
+     // var φ2 = garance.lat * Math.PI / 180;
+  var φ3 = hollis.lat * Math.PI / 180;
 
-  var bΔφ = (this.lat - janet.lat) * Math.PI / 180;
-  var bΔλ = (janet.lng - this.lng) * Math.PI / 180;
+  var bΔφ = (this.lat - hollis.lat) * Math.PI / 180;
+  var bΔλ = (hollis.lng - this.lng) * Math.PI / 180;
 
   var e = Math.sin(bΔφ / 2) * Math.sin(bΔφ / 2) +
           Math.cos(φ1) * Math.cos(φ3) *
@@ -72,28 +63,28 @@ where_janet() { // difference intensity
   var f = 2 * Math.atan2(Math.sqrt(e), Math.sqrt(1 - e));
   var g = (Math.floor(R * f));
 
-  console.log(["Janet = ", g, "meters"]);
+  console.log(["Hollis = ", g, "meters"]);
   return g;
 }
 
   where_both() { // difference intensity
-    const janet = this.get_janet();
-    const brett = this.get_brett();
+    const hollis = this.get_hollis();
+    const garance = this.get_garance();
 
-    if ((!janet) || (!brett)) {
+    if ((!hollis) || (!garance)) {
       return null;
     }
 
     var R = 6371e3; // metres
     var φ1 = this.lat * Math.PI / 180;
-    var φ2 = brett.lat * Math.PI / 180;
-    var φ3 = janet.lat * Math.PI / 180;
+    var φ2 = garnance.lat * Math.PI / 180;
+    var φ3 = hollis.lat * Math.PI / 180;
 
-    var aΔφ = (this.lat - brett.lat) * Math.PI / 180;
-    var aΔλ = (brett.lng - this.lng) * Math.PI / 180;
+    var aΔφ = (this.lat - garance.lat) * Math.PI / 180;
+    var aΔλ = (garance.lng - this.lng) * Math.PI / 180;
 
-    var bΔφ = (this.lat - janet.lat) * Math.PI / 180;
-    var bΔλ = (janet.lng - this.lng) * Math.PI / 180;
+    var bΔφ = (this.lat - hollis.lat) * Math.PI / 180;
+    var bΔλ = (hollis.lng - this.lng) * Math.PI / 180;
 
     var a = Math.sin(aΔφ / 2) * Math.sin(aΔφ / 2) +
          Math.cos(φ1) * Math.cos(φ2) *
@@ -115,30 +106,30 @@ where_janet() { // difference intensity
     return h;
   }
 
-  get_brett() { // brett is here
-    const brett = this.ladies.find((lady) => lady.name === "Brett");
-    return brett;
+  get_garance() { // garance is here
+    const garance = this.ladies.find((lady) => lady.name === "Garance");
+    return garance;
   }
 
-  get_janet() { // janet is here
-    const janet = this.ladies.find((lady) => lady.name === "Janet");
-    return janet;
+  get_hollis() { // janet is here
+    const hollis = this.ladies.find((lady) => lady.name === "Hollis");
+    return hollis;
   }
 
   reply() {
 
-    var k = (this.where_janet() );
-    var s = (this.where_brett() );
+    var k = (this.where_hollis() );
+    var s = (this.where_garance() );
     var t = (this.where_both() );
 
     if ((s > 100) && (k > 100) && (t > 100)) {
       console.log([ "No one is here" ]);
       return [ ...[ 255, 0, 0 ], 1];
     } else if ((s < 100) && (k > 100) && (t > 100)) {
-      console.log([ "Brett is here" ]);
+      console.log([ "Garance is here" ]);
       return [ ...[ 255, 255, 0 ], s];
     } else if ((s > 100) && (k < 100) && (t > 100)) {
-      console.log([ "Janet is here" ]);
+      console.log([ "Hollis is here" ]);
       return [ ...[ 255, 0, 150 ], k];
     } else if ((s < 100) && (k < 100) && (t < 100)) {
       console.log([ "Both are here" ]);
