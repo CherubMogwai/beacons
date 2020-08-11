@@ -38,7 +38,7 @@ export default class Alice {
 
     console.log(["Brett =", d, "meters"]);
 
-    if (d > 120000) {
+    if (d > 12000000) {
       return 0;
     } else {
       return d;
