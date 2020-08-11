@@ -37,7 +37,12 @@ export default class Alice {
     var d = (Math.floor(R * c));
 
     console.log(["Brett =", d, "meters"]);
-    return d;
+
+    if (d > 120000) {
+      return 0;
+    } else {
+      return d;
+    }  
   }
 
 where_janet() { // difference intensity
