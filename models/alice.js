@@ -120,20 +120,14 @@ where_hollis() { // difference intensity
 
     var k = (this.where_hollis() );
     var s = (this.where_garance() );
-    var t = (this.where_both() );
+    // var t = (this.where_both() );
 
-    if ((s > 100) && (k > 100) && (t > 100)) {
-      console.log([ "No one is here" ]);
-      return [ ...[ 255, 0, 0 ], 1];
-    } else if ((s < 100) && (k > 100) && (t > 100)) {
-      console.log([ "Garance is here" ]);
-      return [ ...[ 255, 255, 0 ], s];
-    } else if ((s > 100) && (k < 100) && (t > 100)) {
-      console.log([ "Hollis is here" ]);
-      return [ ...[ 255, 0, 150 ], k];
-    } else if ((s < 100) && (k < 100) && (t < 100)) {
-      console.log([ "Both are here" ]);
-      return [ ...[ 255, 255, 255 ], t];
+    if ((s + k) > 25) {
+      console.log([ "Under 25 meters" ]);
+      return [ ...[ 255, 255, 255 ], 100];
+    } else if ((s + k) < 25) {
+      console.log([ "More than 25 meters" ]);
+      return [ ...[ 0, 0, 255 ], 50];
     }
   }
 }
