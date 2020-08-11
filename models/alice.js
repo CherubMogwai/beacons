@@ -123,11 +123,11 @@ where_hollis() { // difference intensity
     var t = (k + s);
 
     if (t > 25) {
-      console.log([ "Under 25 meters:", t ]);
-      return [ ...[ 255, 255, 255 ], 100];
-    } else if ((s + k) < 25) {
-      console.log([ "More than 25 meters:", t ]);
+      console.log([ "Over 25 meters:", t ]);
       return [ ...[ 0, 0, 255 ], 50];
+    } else if (t < 25) {
+      console.log([ "More than 25 meters:", t ]);
+      return [ ...[ 255, 255, 255 ], 100];
     }
   }
 }
