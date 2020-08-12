@@ -39,7 +39,7 @@ export default class Alice {
 
     console.log(["Garance =", gar_q, "meters"]);
 
-    return q;
+    return gar_q;
   }
 
 where_hollis() { // difference intensity
