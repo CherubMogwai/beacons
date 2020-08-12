@@ -23,21 +23,21 @@ export default class Alice {
     }
 
     var R = 6371e3; // metres
-    var φ1 = this.lat * Math.PI / 180;
-    var φ2 = garance.lat * Math.PI / 180;
+    var φ = this.lat * Math.PI / 180;
+    var gar_φ = garance.lat * Math.PI / 180;
 
-    var aΔφ = (this.lat - garance.lat) * Math.PI / 180;
-    var aΔλ = (garance.lng - this.lng) * Math.PI / 180;
+    var gar_Δφ = (this.lat - garance.lat) * Math.PI / 180;
+    var gar_Δλ = (garance.lng - this.lng) * Math.PI / 180;
 
-    var a = Math.sin(aΔφ / 2) * Math.sin(aΔφ / 2) +
-         Math.cos(φ1) * Math.cos(φ2) *
-         Math.sin(aΔλ / 2) * Math.sin(aΔλ / 2);
+    var gar_a = Math.sin(gar_Δφ / 2) * Math.sin(gar_Δφ / 2) +
+         Math.cos(φ) * Math.cos(gar_φ) *
+         Math.sin(gar_Δλ / 2) * Math.sin(gar_Δλ / 2);
 
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = (Math.floor(R * c));
-    var q = (d > 12000000) ? '0' : d ;
+    var gar_c = 2 * Math.atan2(Math.sqrt(gar_a), Math.sqrt(1 - gar_a));
+    var gar_d = (Math.floor(R * gar_c));
+    var gar_q = (gar_d > 12000000) ? '0' : gar_d;
 
-    console.log(["Garance =", q, "meters"]);
+    console.log(["Garance =", gar_q, "meters"]);
 
     return q;
   }
