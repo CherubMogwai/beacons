@@ -35,7 +35,7 @@ export default class Alice {
 
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     var d = (Math.floor(R * c));
-    var q = (d>12000000) ? '0' : 'd';
+    var q = (d > 12000000) ? '0' : 'd';
 
     console.log(["Garance =", q, "meters"]);
 
