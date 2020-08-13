@@ -62,7 +62,7 @@ const NAMES = {
   "e00fce6801bb1c3c104fba9e": "Octavia",
   "e00fce684c8ba1582a978469": "Claudia",
   "e00fce6838bf38fe67ce034b": "Julia",
-  "e00fce681d39530a3793925c": "Servilia"
+  "e00fce681d39530a3793925c": "Servilia",
 }
 const Beacons = {
   "Janet": new Janet(),
