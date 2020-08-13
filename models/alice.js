@@ -15,6 +15,30 @@ export default class Alice {
     this.ladies = beacons
   }
 
+  where_domitia() {
+    const domitia = this.get_domitia();
+
+    if (!domitia) {
+      return null;
+    }
+
+    var R = 6371e3; // metres
+    var φ = this.lat * Math.PI / 180;
+    var dom_φ = domitia.lat * Math.PI / 180;
+    var dom_Δφ = (this.lat - domitia.lat) * Math.PI / 180;
+    var dom_Δλ = (domitia.lng - this.lng) * Math.PI / 180;
+    var dom_a = Math.sin(dom_Δφ / 2) * Math.sin(dom_Δφ / 2) +
+         Math.cos(φ) * Math.cos(dom_φ) *
+         Math.sin(dom_Δλ / 2) * Math.sin(dom_Δλ / 2);
+    var dom_c = 2 * Math.atan2(Math.sqrt(dom_a), Math.sqrt(1 - dom_a));
+    var dom_d = (Math.floor(R * dom_c));
+    var dom_q = (dom_d > 12000000) ? '0' : dom_d;
+
+    console.log(["domitia =", dom_q, "meters"]);
+
+    return dom_q;
+  }
+
   where_garance() {
     const garance = this.get_garance();
 
@@ -73,19 +97,24 @@ where_hollis() { // difference intensity
     const hollis = this.ladies.find((lady) => lady.name === "Hollis");
     return hollis;
   }
+  get_domitia() { // hollis is here
+    const hollis = this.ladies.find((lady) => lady.name === "Hollis");
+    return hollis;
+  }
 
   reply() {
 
     var a = (this.where_hollis() );
     var b = (this.where_garance() );
-    var total = (a + b);
+    var c = (this.where_domitia() );
+    var total = (a + b + c);
 
     if (total > 25) {
       console.log([ "Over 25 meters:", total ]);
       return [ ...[ 0, 0, 255 ], 50];
     } else if (total < 25) {
       console.log([ "More than 25 meters:", total ]);
-      return [ ...[ 255, 255, 255 ], 100];
+      return [ ...[ 255, 255, 255 ], 5];
     }
   }
 }
