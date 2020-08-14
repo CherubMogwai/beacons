@@ -1,6 +1,6 @@
-export default class Hollis {
+export default class Alice {
   constructor() {
-    this.name = "Hollis";
+    this.name = "Alice";
     this.lat = 0;
     this.lng = 0;
     this.ladies = [];
@@ -15,130 +15,106 @@ export default class Hollis {
     this.ladies = beacons
   }
 
-  where_janet() {
-    const janet = this.get_janet();
+  where_domitia() {
+    const domitia = this.get_domitia();
 
-    if (!janet) {
+    if (!domitia) {
       return null;
     }
 
     var R = 6371e3; // metres
-    var φ1 = this.lat * Math.PI / 180;
-    var φ2 = janet.lat * Math.PI / 180;
+    var φ = this.lat * Math.PI / 180;
+    var dom_φ = domitia.lat * Math.PI / 180;
+    var dom_Δφ = (this.lat - domitia.lat) * Math.PI / 180;
+    var dom_Δλ = (domitia.lng - this.lng) * Math.PI / 180;
+    var dom_a = Math.sin(dom_Δφ / 2) * Math.sin(dom_Δφ / 2) +
+         Math.cos(φ) * Math.cos(dom_φ) *
+         Math.sin(dom_Δλ / 2) * Math.sin(dom_Δλ / 2);
+    var dom_c = 2 * Math.atan2(Math.sqrt(dom_a), Math.sqrt(1 - dom_a));
+    var dom_d = (Math.floor(R * dom_c));
+    var dom_q = (dom_d > 12000000) ? '0' : dom_d;
 
-    var aΔφ = (this.lat - janet.lat) * Math.PI / 180;
-    var aΔλ = (janet.lng - this.lng) * Math.PI / 180;
+    console.log(["domitia =", dom_q, "meters"]);
 
-    var a = Math.sin(aΔφ / 2) * Math.sin(aΔφ / 2) +
-         Math.cos(φ1) * Math.cos(φ2) *
-         Math.sin(aΔλ / 2) * Math.sin(aΔλ / 2);
-
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = (Math.floor(R * c));
-
-    console.log(["Janet =", d, "meters"]);
-    return d;
+    return dom_q;
   }
 
-  where_alice() { // difference intensity
-    const alice = this.get_alice();
+  where_garance() {
+    const garance = this.get_garance();
 
-    if (!alice) {
+    if (!garance) {
       return null;
     }
 
     var R = 6371e3; // metres
-    var φ1 = this.lat * Math.PI / 180;
-     // var φ2 = brett.lat * Math.PI / 180;
-    var φ3 = alice.lat * Math.PI / 180;
+    var φ = this.lat * Math.PI / 180;
+    var gar_φ = garance.lat * Math.PI / 180;
+    var gar_Δφ = (this.lat - garance.lat) * Math.PI / 180;
+    var gar_Δλ = (garance.lng - this.lng) * Math.PI / 180;
+    var gar_a = Math.sin(gar_Δφ / 2) * Math.sin(gar_Δφ / 2) +
+         Math.cos(φ) * Math.cos(gar_φ) *
+         Math.sin(gar_Δλ / 2) * Math.sin(gar_Δλ / 2);
+    var gar_c = 2 * Math.atan2(Math.sqrt(gar_a), Math.sqrt(1 - gar_a));
+    var gar_d = (Math.floor(R * gar_c));
+    var gar_q = (gar_d > 12000000) ? '0' : gar_d;
 
-    var bΔφ = (this.lat - alice.lat) * Math.PI / 180;
-    var bΔλ = (alice.lng - this.lng) * Math.PI / 180;
+    console.log(["Garance =", gar_q, "meters"]);
 
-    var e = Math.sin(bΔφ / 2) * Math.sin(bΔφ / 2) +
-          Math.cos(φ1) * Math.cos(φ3) *
-          Math.sin(bΔλ / 2) * Math.sin(bΔλ / 2);
-
-    var f = 2 * Math.atan2(Math.sqrt(e), Math.sqrt(1 - e));
-    var g = (Math.floor(R * f));
-
-    console.log(["Alice = ", g, "meters"]);
-    return g;
+    return gar_q;
   }
 
-  where_both() { // difference intensity
-    const alice = this.get_alice();
-    const janet = this.get_janet();
+where_alice() { // difference intensity
+  const alice = this.get_alice();
 
-    if ((!alice) || (!janet)) {
-      return null;
-    }
-
-    var R = 6371e3; // metres
-    var φ1 = this.lat * Math.PI / 180;
-    var φ2 = janet.lat * Math.PI / 180;
-    var φ3 = alice.lat * Math.PI / 180;
-
-    var aΔφ = (this.lat - janet.lat) * Math.PI / 180;
-    var aΔλ = (janet.lng - this.lng) * Math.PI / 180;
-
-    var bΔφ = (this.lat - alice.lat) * Math.PI / 180;
-    var bΔλ = (alice.lng - this.lng) * Math.PI / 180;
-
-    var a = Math.sin(aΔφ / 2) * Math.sin(aΔφ / 2) +
-         Math.cos(φ1) * Math.cos(φ2) *
-         Math.sin(aΔλ / 2) * Math.sin(aΔλ / 2);
-
-    var e = Math.sin(bΔφ / 2) * Math.sin(bΔφ / 2) +
-          Math.cos(φ1) * Math.cos(φ3) *
-          Math.sin(bΔλ / 2) * Math.sin(bΔλ / 2);
-
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var f = 2 * Math.atan2(Math.sqrt(e), Math.sqrt(1 - e));
-
-    var d = R * c;
-    var g = R * f;
-    var h = (Math.floor((d + g) / 2));
-
-    console.log(["Both = ", h, "meters"]);
-    // return g;
-    return h;
+  if (!alice) {
+    return null;
   }
 
-  get_janet() { // janet is here
-    const janet = this.ladies.find((lady) => lady.name === "Janet");
-    return janet;
+  var R = 6371e3; // metres
+  var φ = this.lat * Math.PI / 180;
+  var ali_φ = alice.lat * Math.PI / 180;
+  var ali_Δφ = (this.lat - alice.lat) * Math.PI / 180;
+  var ali_Δλ = (alice.lng - this.lng) * Math.PI / 180;
+  var ali_a = Math.sin(ali_Δφ / 2) * Math.sin(ali_Δφ / 2) +
+       Math.cos(φ) * Math.cos(ali_φ) *
+       Math.sin(ali_Δλ / 2) * Math.sin(ali_Δλ / 2);
+  var ali_c = 2 * Math.atan2(Math.sqrt(ali_a), Math.sqrt(1 - ali_a));
+  var ali_d = (Math.floor(R * ali_c));
+  var ali_q = (ali_d > 12000000) ? '0' : ali_d;
+
+  console.log(["Alice =", ali_q, "meters"]);
+
+  return ali_q;
+
+}
+
+  get_garance() { // garance is here
+    const garance = this.ladies.find((lady) => lady.name === "Garance");
+    return garance;
   }
 
   get_alice() { // alice is here
     const alice = this.ladies.find((lady) => lady.name === "Alice");
     return alice;
   }
+  get_domitia() { // domita is here
+    const domita = this.ladies.find((lady) => lady.name === "Domita");
+    return domita;
+  }
 
   reply() {
 
-    //var k = (this.where_alice() );
-    var s = (this.where_janet() );
-  //  var t = (this.where_both() );
+    var a = (this.where_alice() );
+    var b = (this.where_garance() );
+    var c = (this.where_domitia() );
+    var total = (a + b + c);
 
-  if ((s > 100)) {
-    console.log([ "No one is here red" ]);
-    return [ ...[ 255, 255, 0 ], 100];
-  } else if ((s < 100) && (s > 85)) {
-    console.log([ "Janet is nearby purple" ]);
-    return [ ...[ 255, 0, 255 ], s];
-  } else if ((s < 85) && (s > 65)) {
-    console.log([ "Janet is closer pink" ]);
-    return [ ...[ 255, 155, 155 ], s];
-  } else if ((s < 65) && (s > 45)) {
-    console.log([ "Janet is closer orange" ]);
-    return [ ...[ 254, 155, 0 ], s];
-  } else if ((s < 45) && (s > 20)) {
-    console.log([ "Janet is closer gold" ]);
-    return [ ...[ 255, 255, 0 ], s];
-  } else if ((s < 20)) {
-    console.log([ "Janet is here white" ]);
-    return [ ...[ 255, 255, 255 ], 100];
-  }
+    if (total > 25) {
+      console.log([ "Over 25 meters:", total ]);
+      return [ ...[ 0, 0, 255 ], 50];
+    } else if (total < 25) {
+      console.log([ "More than 25 meters:", total ]);
+      return [ ...[ 255, 255, 255 ], 5];
+    }
   }
 }

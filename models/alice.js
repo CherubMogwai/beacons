@@ -98,8 +98,8 @@ where_hollis() { // difference intensity
     return hollis;
   }
   get_domitia() { // hollis is here
-    const hollis = this.ladies.find((lady) => lady.name === "Hollis");
-    return hollis;
+    const domita = this.ladies.find((lady) => lady.name === "Domita");
+    return domita;
   }
 
   reply() {
