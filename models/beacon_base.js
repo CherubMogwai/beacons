@@ -23,6 +23,7 @@ export default class Beacon {
       return 0;
     }
 
+    const MAX_DISTANCE = 12000000;
     var R = 6371e3; // metres
     var φ = this.lat * Math.PI / 180;
     var oth_φ = otherBeacon.lat * Math.PI / 180;
@@ -33,7 +34,7 @@ export default class Beacon {
          Math.sin(oth_Δλ / 2) * Math.sin(oth_Δλ / 2);
     var oth_c = 2 * Math.atan2(Math.sqrt(oth_a), Math.sqrt(1 - oth_a));
     var oth_d = (Math.floor(R * oth_c));
-    var oth_q = (oth_d > 12000000) ? 0 : oth_d;
+    var oth_q = (oth_d > MAX_DISTANCE) ? 0 : oth_d;
 
     console.log([name, " =", oth_q, "meters"]);
 
