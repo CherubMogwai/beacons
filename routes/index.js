@@ -29,6 +29,7 @@ import Octavia from 'models/octavia';
 import Claudia from 'models/claudia';
 import Julia from 'models/julia';
 import Servilia from 'models/servilia';
+import BeaconBase from 'models/beacon_base';
 
 import Model from 'models';
 
@@ -65,36 +66,36 @@ const NAMES = {
   "e00fce681d39530a3793925c": "Servilia",
 }
 const Beacons = {
-  "Janet": new Janet(),
-  "Alice": new Alice(),
-  "Brett": new Brett(),
-  "Garance": new Garance(),
-  "Hollis": new Hollis(),
-  "Minor": new Minor(),
-  "Major": new Major(),
-  "Aemelia": new Aemelia(),
-  "Younger": new Younger(),
-  "Elder": new Elder(),
-  "Drusilla": new Drusilla(),
-  "Paulina": new Paulina(),
-  "Marcia": new Marcia(),
-  "Pomponia": new Pomponia(),
-  "Aquillia": new Aquillia(),
-  "Lucilla": new Lucilla(),
-  "Vipsania": new Vipsania(),
-  "Messalina": new Messalina(),
-  "Livilla": new Livilla(),
-  "Domitia": new Domitia(),
-  "Aurelia": new Aurelia(),
-  "Hersilia": new Hersilia(),
-  "Lucretia": new Lucretia(),
-  "Cornelia": new Cornelia(),
-  "Antonia": new Antonia(),
-  "Agrippina": new Agrippina(),
-  "Octavia": new Octavia(),
-  "Claudia": new Claudia(),
-  "Julia": new Julia(),
-  "Servilia": new Servilia()
+  "Janet": new BeaconBase('Janet'),
+  "Alice": new BeaconBase('Alice'),
+  "Brett": new BeaconBase('Brett'),
+  "Garance": new BeaconBase('Garance'),
+  "Hollis": new BeaconBase('Hollis'),
+  "Minor": new BeaconBase('Minor'),
+  "Major": new BeaconBase('Major'),
+  "Aemelia": new BeaconBase('Aemelia'),
+  "Younger": new BeaconBase('Younger'),
+  "Elder": new BeaconBase('Elder'),
+  "Drusilla": new BeaconBase('Drusilla'),
+  "Paulina": new BeaconBase('Paulina'),
+  "Marcia": new BeaconBase('Marcia'),
+  "Pomponia": new BeaconBase('Pomponia'),
+  "Aquillia": new BeaconBase('Aquillia'),
+  "Lucilla": new BeaconBase('Lucilla'),
+  "Vipsania": new BeaconBase('Vipsania'),
+  "Messalina": new BeaconBase('Messalina'),
+  "Livilla": new BeaconBase('Livilla'),
+  "Domitia": new BeaconBase('Domitia'),
+  "Aurelia": new BeaconBase('Aurelia'),
+  "Hersilia": new BeaconBase('Hersilia'),
+  "Lucretia": new BeaconBase('Lucretia'),
+  "Cornelia": new BeaconBase('Cornelia'),
+  "Antonia": new BeaconBase('Antonia'),
+  "Agrippina": new BeaconBase('Agrippina'),
+  "Octavia": new BeaconBase('Octavia'),
+  "Claudia": new BeaconBase('Claudia'),
+  "Julia": new BeaconBase('Julia'),
+  "Servilia": new BeaconBase('Servilia'),
 }
 
 export default function(router) {
@@ -132,7 +133,8 @@ export default function(router) {
     const current = Beacons[Name]
     current.set_lat(lat);
     current.set_lng(lng);
-    current.set_ladies([Beacons["Alice"], Beacons["Janet"], Beacons["Brett"], Beacons["Garance"], Beacons["Hollis"], Beacons["Minor"], Beacons["Major"], Beacons["Aemelia"], Beacons["Younger"], Beacons["Elder"], Beacons["Drusilla"], Beacons["Paulina"], Beacons["Marcia"], Beacons["Pomponia"], Beacons["Aquillia"], Beacons["Lucilla"], Beacons["Vipsania"], Beacons["Messalina"], Beacons["Livilla"], Beacons["Domitia"], Beacons["Aurelia"], Beacons["Hersilia"], Beacons["Lucretia"], Beacons["Cornelia"], Beacons["Antonia"], Beacons["Agrippina"], Beacons["Octavia"], Beacons["Claudia"], Beacons["Julia"], Beacons["Servilia"]]);
+    //current.set_ladies([Beacons["Alice"], Beacons["Janet"], Beacons["Brett"], Beacons["Garance"], Beacons["Hollis"], Beacons["Minor"], Beacons["Major"], Beacons["Aemelia"], Beacons["Younger"], Beacons["Elder"], Beacons["Drusilla"], Beacons["Paulina"], Beacons["Marcia"], Beacons["Pomponia"], Beacons["Aquillia"], Beacons["Lucilla"], Beacons["Vipsania"], Beacons["Messalina"], Beacons["Livilla"], Beacons["Domitia"], Beacons["Aurelia"], Beacons["Hersilia"], Beacons["Lucretia"], Beacons["Cornelia"], Beacons["Antonia"], Beacons["Agrippina"], Beacons["Octavia"], Beacons["Claudia"], Beacons["Julia"], Beacons["Servilia"]]);
+    current.set_ladies(Beacons);
     const response = current.reply();
 
     ctx.body = response.join(',');
