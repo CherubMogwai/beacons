@@ -137,7 +137,7 @@ export default function(router) {
     current.set_ladies(Beacons);
     const response = current.reply();
 
-    ctx.body = response.join(',');
+    ctx.body = Array.isArray(response) ? response.join(',') : response;
 
 
 

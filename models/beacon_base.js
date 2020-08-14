@@ -20,7 +20,7 @@ export default class Beacon {
     //const domitia = this.get_domitia();
 
     if (!otherBeacon) {
-      return null;
+      return 0;
     }
 
     var R = 6371e3; // metres
