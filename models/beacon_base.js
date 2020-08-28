@@ -56,7 +56,7 @@ export default class Beacon {
       return [ ...[ 0, 0, 255 ], 100];
     } else if (total < 25) {
       console.log([ "Less than 25 meters:", total ]);
-      return [ ...[ 0, 255, 255 ], 100];
+      return [ ...[ 74, 65, 42 ], 100];
     }
   }
 }
