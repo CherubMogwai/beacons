@@ -90,7 +90,7 @@ export default class Beacon {
     } else if ((total < 28500) && (total > 19000)) {
       console.log([ "Over 950 m: yellow:", total ]);
       return [ ...[255, 255, 0 ], 60];
-    } else if ((total < 17000) && (total > 15000)) {
+    } else if ((total < 19000) && (total > 15000)) {
       console.log([ "Over 850 m: cyan:", total ]);
       return [ ...[0, 255, 255 ], 65];
     } else if ((total < 15000) && (total > 13000)) {
