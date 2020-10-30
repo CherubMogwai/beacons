@@ -53,7 +53,7 @@ export default class Beacon {
 
     if (total > 1000) {
       console.log([ "Over 8 km: red:", total ]);
-      return [ ...[ 0, 0, 255 ], 10];
+      return [ ...[ 0, 255, 0 ], 100];
     } else if ((total < 1000) && (total > 950)) {
       console.log([ "Over 7 km: blue:", total ]);
       return [ ...[0, 0, 255 ], 20];
