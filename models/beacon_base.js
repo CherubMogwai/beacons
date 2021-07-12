@@ -51,82 +51,82 @@ export default class Beacon {
     var c = (this.where_domitia() );
     var total = (a + b + c);*/
 
-    if (total > 1000) {
-      console.log([ "Over 8 km: red:", total ]);
+    if (total > 60000) {
+      console.log([ "Over 2 km: red:", total ]);
       return [ ...[ 255, 0, 255 ], 100];
-    } else if ((total < 1000) && (total > 950)) {
+    } else if ((total < 60000) && (total > 55000)) {
       console.log([ "Over 7 km: blue:", total ]);
       return [ ...[0, 0, 255 ], 20];
-    } else if ((total < 950) && (total > 900)) {
+    } else if ((total < 55000) && (total > 50000)) {
       console.log([ "Over 6 km: pink:", total ]);
       return [ ...[255, 50, 50 ], 22];
-    } else if ((total < 900) && (total > 850)) {
+    } else if ((total < 50000) && (total > 45000)) {
       console.log([ "Over 5 km: green:", total ]);
       return [ ...[0, 255, 0 ], 24];
-    } else if ((total < 850) && (total > 800)) {
+    } else if ((total < 45000) && (total > 40000)) {
       console.log([ "Over 4.5 km: yellow:", total ]);
       return [ ...[255, 255, 0 ], 26];
-    } else if ((total < 800) && (total > 750)) {
+    } else if ((total < 40000) && (total > 35000)) {
       console.log([ "Over 4 km: cyan", total ]);
       return [ ...[0, 255, 255 ], 28];
-    } else if ((total < 750) && (total > 700)) {
+    } else if ((total < 35000) && (total > 30000)) {
       console.log([ "Over 3.5 km: purple:", total ]);
       return [ ...[255, 0, 255 ], 30];
-    } else if ((total < 700) && (total > 650)) {
+    } else if ((total < 30000) && (total > 25000)) {
       console.log([ "Over 3 km: red", total ]);
       return [ ...[255, 0, 0 ], 35];
-    } else if ((total < 650) && (total > 600)) {
+    } else if ((total < 25000) && (total > 20000)) {
       console.log([ "Over 2.5 km: orange:", total ]);
       return [ ...[255, 165, 0 ], 40];
-    } else if ((total < 600) && (total > 550)) {
+    } else if ((total < 20000) && (total > 15000)) {
       console.log([ "Over 2 km: blue:", total ]);
       return [ ...[0, 0, 255 ], 45];
-    } else if ((total < 550) && (total > 500)) {
+    } else if ((total < 15000) && (total > 14500)) {
       console.log([ "Over 1.5 km: pink:", total ]);
       return [ ...[255, 100, 100 ], 50];
-    } else if ((total < 500) && (total > 475)) {
+    } else if ((total < 14500) && (total > 14000)) {
       console.log([ "Over 1 km: green:", total ]);
       return [ ...[0, 255, 0 ], 55];
-    } else if ((total < 475) && (total > 450)) {
+    } else if ((total < 14000) && (total > 13000)) {
       console.log([ "Over 950 m: yellow:", total ]);
       return [ ...[255, 255, 0 ], 60];
-    } else if ((total < 450) && (total > 425)) {
+    } else if ((total < 13000) && (total > 12000)) {
       console.log([ "Over 850 m: cyan:", total ]);
       return [ ...[0, 255, 255 ], 65];
-    } else if ((total < 425) && (total > 400)) {
+    } else if ((total < 12000) && (total > 11000)) {
       console.log([ "Over 800 m: purple:", total ]);
       return [ ...[255, 0, 255 ], 70];
-    } else if ((total < 400) && (total > 350)) {
+    } else if ((total < 11000) && (total > 10000)) {
       console.log([ "Over 700 m: red:", total ]);
       return [ ...[255, 0, 0 ], 75];
-    } else if ((total < 350) && (total > 325)) {
+    } else if ((total < 10000) && (total > 9000)) {
       console.log([ "Over 650 m: orange", total ]);
       return [ ...[255, 165, 0 ], 80];
-    } else if ((total < 325) && (total > 275)) {
+    } else if ((total < 9000) && (total > 8000)) {
       console.log([ "Over 575 m: blue:", total ]);
       return [ ...[0, 0, 255 ], 82];
-    } else if ((total < 275) && (total > 250)) {
+    } else if ((total < 8000) && (total > 7000)) {
       console.log([ "Over 500 m: pink", total ]);
       return [ ...[255, 50, 50 ], 84];
-    } else if ((total < 250) && (total > 225)) {
+    } else if ((total < 7000) && (total > 6000)) {
       console.log([ "Over 425 m: green", total ]);
       return [ ...[0, 255, 0 ], 86];
-    } else if ((total < 225) && (total > 200)) {
+    } else if ((total < 6000) && (total > 5000)) {
       console.log([ "Over 350 m: yellow", total ]);
       return [ ...[255, 255, 0 ], 88];
-    } else if ((total < 200) && (total > 175)) {
+    } else if ((total < 5000) && (total > 4000)) {
       console.log([ "Over 300 m: cyan", total ]);
       return [ ...[0, 255, 255 ], 90];
-    } else if ((total < 175) && (total > 150)) {
+    } else if ((total < 4000) && (total > 3000)) {
       console.log([ "Over 225 m: purple", total ]);
       return [ ...[255, 0, 255 ], 92];
-    } else if ((total < 150) && (total > 125)) {
+    } else if ((total < 3000) && (total > 2000)) {
       console.log([ "Over 150 m: red", total ]);
       return [ ...[255, 0, 0 ], 94];
-    } else if ((total < 125) && (total > 100)) {
+    } else if ((total < 2000) && (total > 1000)) {
       console.log([ "Over 100 m: orange:", total ]);
       return [ ...[255, 50, 50 ], 96];
-    } else if (total < 100) {
+    } else if (total < 1000) {
       console.log([ "less than 100 m:", total ]);
       return [ ...[255, 255, 255 ], 100];
     }
