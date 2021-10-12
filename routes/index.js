@@ -34,13 +34,13 @@ import BeaconBase from 'models/beacon_base';
 import Model from 'models';
 
 const NAMES = {
-  "e00fce680b3065fc268242a2": "Alice",
+  //"e00fce680b3065fc268242a2": "Alice",
   "420023000c51343334363138": "Janet",
   "1d0053000c51343334363138": "Brett",
   "e00fce68a140f586ed09a7b6": "Garance",
   //"e00fce6863fc99f591485187": "Hollis",
   "e00fce68aef1348e8458a995": "Minor",
-  "e00fce687ffd264a57a3d47f": "Major",
+  //"e00fce687ffd264a57a3d47f": "Major",
   "e00fce68b49dabcf8d2d2d3f": "Aemelia",
 //  "e00fce688f6eee5263cf01e9": "Younger",
   "e00fce68d9f6cc82af63e8cd": "Elder",
@@ -67,12 +67,12 @@ const NAMES = {
 }
 const Beacons = {
   "Janet": new BeaconBase('Janet'),
-  "Alice": new BeaconBase('Alice'),
+  //"Alice": new BeaconBase('Alice'),
   "Brett": new BeaconBase('Brett'),
   "Garance": new BeaconBase('Garance'),
   //"Hollis": new BeaconBase('Hollis'),
   "Minor": new BeaconBase('Minor'),
-  "Major": new BeaconBase('Major'),
+  //"Major": new BeaconBase('Major'),
   "Aemelia": new BeaconBase('Aemelia'),
   //"Younger": new BeaconBase('Younger'),
   "Elder": new BeaconBase('Elder'),
