@@ -7,7 +7,7 @@ import Garance from 'models/garance';
 import Minor from 'models/minor';
 import Major from 'models/major';
 import Aemelia from 'models/aemelia';
-import Younger from 'models/younger';
+//import Younger from 'models/younger';
 import Elder from 'models/elder';
 import Drusilla from 'models/drusilla';
 import Paulina from 'models/paulina';
@@ -19,9 +19,9 @@ import Vipsania from 'models/vipsania';
 import Messalina from 'models/messalina';
 import Livilla from 'models/livilla';
 import Domitia from 'models/domitia';
-import Aurelia from 'models/aurelia';
+//import Aurelia from 'models/aurelia';
 import Hersilia from 'models/hersilia';
-import Lucretia from 'models/lucretia';
+//import Lucretia from 'models/lucretia';
 import Cornelia from 'models/cornelia';
 import Antonia from 'models/antonia';
 import Agrippina from 'models/agrippina';
@@ -42,7 +42,7 @@ const NAMES = {
   "e00fce68aef1348e8458a995": "Minor",
   "e00fce687ffd264a57a3d47f": "Major",
   "e00fce68b49dabcf8d2d2d3f": "Aemelia",
-  "e00fce688f6eee5263cf01e9": "Younger",
+  //"e00fce688f6eee5263cf01e9": "Younger",
   "e00fce68d9f6cc82af63e8cd": "Elder",
   //"e00fce686912e2ca35537271": "Drusilla",
   "e00fce68738521303818cf4c": "Paulina",
@@ -54,7 +54,7 @@ const NAMES = {
   "e00fce68cfea635d70647499": "Messalina",
   "e00fce68c37aae141a05dbc5": "Livilla",
   "e00fce6806b373be9fd18ebf": "Domitia",
-  "e00fce680e5e6ab4488ff782": "Aurelia",
+  //"e00fce680e5e6ab4488ff782": "Aurelia",
   "e00fce6863bca504c0ac62c9": "Hersilia",
   //"e00fce682ed8c525abfdb09f": "Lucretia",
   "e00fce688bcb5aafdcba753d": "Cornelia",
@@ -74,7 +74,7 @@ const Beacons = {
   "Minor": new BeaconBase('Minor'),
   "Major": new BeaconBase('Major'),
   "Aemelia": new BeaconBase('Aemelia'),
-  "Younger": new BeaconBase('Younger'),
+  //"Younger": new BeaconBase('Younger'),
   "Elder": new BeaconBase('Elder'),
   //"Drusilla": new BeaconBase('Drusilla'),
   "Paulina": new BeaconBase('Paulina'),
@@ -86,7 +86,7 @@ const Beacons = {
   "Messalina": new BeaconBase('Messalina'),
   "Livilla": new BeaconBase('Livilla'),
   "Domitia": new BeaconBase('Domitia'),
-  "Aurelia": new BeaconBase('Aurelia'),
+  //"Aurelia": new BeaconBase('Aurelia'),
   "Hersilia": new BeaconBase('Hersilia'),
   //"Lucretia": new BeaconBase('Lucretia'),
   "Cornelia": new BeaconBase('Cornelia'),
