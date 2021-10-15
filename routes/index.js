@@ -1,7 +1,7 @@
 import { beacons as config } from 'config';
 import Brett from 'models/brett';
 //import Janet from 'models/janet';
-//import Alice from 'models/alice';
+import Alice from 'models/alice';
 import Garance from 'models/garance';
 //import Hollis from 'models/hollis';
 import Minor from 'models/minor';
@@ -34,7 +34,7 @@ import BeaconBase from 'models/beacon_base';
 import Model from 'models';
 
 const NAMES = {
-  //"e00fce680b3065fc268242a2": "Alice",
+  "e00fce680b3065fc268242a2": "Alice",
   //"420023000c51343334363138": "Janet",
   "1d0053000c51343334363138": "Brett",
   "e00fce68a140f586ed09a7b6": "Garance",
@@ -67,7 +67,7 @@ const NAMES = {
 }
 const Beacons = {
   //"Janet": new BeaconBase('Janet'),
-  //"Alice": new BeaconBase('Alice'),
+  "Alice": new BeaconBase('Alice'),
   "Brett": new BeaconBase('Brett'),
   "Garance": new BeaconBase('Garance'),
   //"Hollis": new BeaconBase('Hollis'),
