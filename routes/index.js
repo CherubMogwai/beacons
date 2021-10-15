@@ -8,7 +8,7 @@ import Minor from 'models/minor';
 //import Major from 'models/major';
 import Aemelia from 'models/aemelia';
 //import Younger from 'models/younger';
-//import Elder from 'models/elder';
+import Elder from 'models/elder';
 //import Drusilla from 'models/drusilla';
 //import Paulina from 'models/paulina';
 import Marcia from 'models/marcia';
@@ -43,7 +43,7 @@ const NAMES = {
   //"e00fce687ffd264a57a3d47f": "Major",
   "e00fce68b49dabcf8d2d2d3f": "Aemelia",
   //"e00fce688f6eee5263cf01e9": "Younger",
-  //"e00fce68d9f6cc82af63e8cd": "Elder",
+  "e00fce68d9f6cc82af63e8cd": "Elder",
   //"e00fce686912e2ca35537271": "Drusilla",
   //"e00fce68738521303818cf4c": "Paulina",
   "e00fce68e5d4f33e964ab215": "Marcia",
@@ -75,7 +75,7 @@ const Beacons = {
   //"Major": new BeaconBase('Major'),
   "Aemelia": new BeaconBase('Aemelia'),
   //"Younger": new BeaconBase('Younger'),
-  //"Elder": new BeaconBase('Elder'),
+  "Elder": new BeaconBase('Elder'),
   //"Drusilla": new BeaconBase('Drusilla'),
   //"Paulina": new BeaconBase('Paulina'),
   "Marcia": new BeaconBase('Marcia'),
