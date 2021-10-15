@@ -10,10 +10,10 @@ import Aemelia from 'models/aemelia';
 //import Younger from 'models/younger';
 //import Elder from 'models/elder';
 import Drusilla from 'models/drusilla';
-import Paulina from 'models/paulina';
+//import Paulina from 'models/paulina';
 import Marcia from 'models/marcia';
 import Pomponia from 'models/pomponia';
-import Aquillia from 'models/aquillia';
+//import Aquillia from 'models/aquillia';
 import Lucilla from 'models/lucilla';
 import Vipsania from 'models/vipsania';
 import Messalina from 'models/messalina';
@@ -28,7 +28,7 @@ import Agrippina from 'models/agrippina';
 import Octavia from 'models/octavia';
 import Claudia from 'models/claudia';
 import Julia from 'models/julia';
-//import Servilia from 'models/servilia';
+import Servilia from 'models/servilia';
 import BeaconBase from 'models/beacon_base';
 
 import Model from 'models';
@@ -45,10 +45,10 @@ const NAMES = {
   //"e00fce688f6eee5263cf01e9": "Younger",
   //"e00fce68d9f6cc82af63e8cd": "Elder",
   //"e00fce686912e2ca35537271": "Drusilla",
-  "e00fce68738521303818cf4c": "Paulina",
+  //"e00fce68738521303818cf4c": "Paulina",
   "e00fce68e5d4f33e964ab215": "Marcia",
   "e00fce68e4aa1fccfda98910": "Pomponia",
-  "e00fce68a388ca3b05ab3f3c": "Aquillia",
+  //"e00fce68a388ca3b05ab3f3c": "Aquillia",
   "e00fce6899249c9042b62b54": "Lucilla",
   "e00fce683f786d6c32b71e4c": "Vipsania",
   "e00fce68cfea635d70647499": "Messalina",
@@ -63,7 +63,7 @@ const NAMES = {
   "e00fce6801bb1c3c104fba9e": "Octavia",
   "e00fce684c8ba1582a978469": "Claudia",
   "e00fce6838bf38fe67ce034b": "Julia",
-  //"e00fce681d39530a3793925c": "Servilia",
+  "e00fce681d39530a3793925c": "Servilia",
 }
 const Beacons = {
   //"Janet": new BeaconBase('Janet'),
@@ -77,10 +77,10 @@ const Beacons = {
   //"Younger": new BeaconBase('Younger'),
   //"Elder": new BeaconBase('Elder'),
   //"Drusilla": new BeaconBase('Drusilla'),
-  "Paulina": new BeaconBase('Paulina'),
+  //"Paulina": new BeaconBase('Paulina'),
   "Marcia": new BeaconBase('Marcia'),
   "Pomponia": new BeaconBase('Pomponia'),
-  "Aquillia": new BeaconBase('Aquillia'),
+  //"Aquillia": new BeaconBase('Aquillia'),
   "Lucilla": new BeaconBase('Lucilla'),
   "Vipsania": new BeaconBase('Vipsania'),
   "Messalina": new BeaconBase('Messalina'),
@@ -95,7 +95,7 @@ const Beacons = {
   "Octavia": new BeaconBase('Octavia'),
   "Claudia": new BeaconBase('Claudia'),
   "Julia": new BeaconBase('Julia'),
-  //"Servilia": new BeaconBase('Servilia'),
+  "Servilia": new BeaconBase('Servilia'),
 }
 
 export default function(router) {
