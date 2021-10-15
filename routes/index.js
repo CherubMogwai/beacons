@@ -5,7 +5,7 @@ import Brett from 'models/brett';
 import Garance from 'models/garance';
 //import Hollis from 'models/hollis';
 import Minor from 'models/minor';
-//import Major from 'models/major';
+import Major from 'models/major';
 import Aemelia from 'models/aemelia';
 //import Younger from 'models/younger';
 //import Elder from 'models/elder';
@@ -40,7 +40,7 @@ const NAMES = {
   "e00fce68a140f586ed09a7b6": "Garance",
   //"e00fce6863fc99f591485187": "Hollis",
   "e00fce68aef1348e8458a995": "Minor",
-  //"e00fce687ffd264a57a3d47f": "Major",
+  "e00fce687ffd264a57a3d47f": "Major",
   "e00fce68b49dabcf8d2d2d3f": "Aemelia",
   //"e00fce688f6eee5263cf01e9": "Younger",
   //"e00fce68d9f6cc82af63e8cd": "Elder",
@@ -72,7 +72,7 @@ const Beacons = {
   "Garance": new BeaconBase('Garance'),
   //"Hollis": new BeaconBase('Hollis'),
   "Minor": new BeaconBase('Minor'),
-  //"Major": new BeaconBase('Major'),
+  "Major": new BeaconBase('Major'),
   "Aemelia": new BeaconBase('Aemelia'),
   //"Younger": new BeaconBase('Younger'),
   //"Elder": new BeaconBase('Elder'),
