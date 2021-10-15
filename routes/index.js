@@ -28,7 +28,7 @@ import Agrippina from 'models/agrippina';
 import Octavia from 'models/octavia';
 import Claudia from 'models/claudia';
 import Julia from 'models/julia';
-import Servilia from 'models/servilia';
+//import Servilia from 'models/servilia';
 import BeaconBase from 'models/beacon_base';
 
 import Model from 'models';
@@ -63,7 +63,7 @@ const NAMES = {
   "e00fce6801bb1c3c104fba9e": "Octavia",
   "e00fce684c8ba1582a978469": "Claudia",
   "e00fce6838bf38fe67ce034b": "Julia",
-  "e00fce681d39530a3793925c": "Servilia",
+  //"e00fce681d39530a3793925c": "Servilia",
 }
 const Beacons = {
   //"Janet": new BeaconBase('Janet'),
@@ -95,7 +95,7 @@ const Beacons = {
   "Octavia": new BeaconBase('Octavia'),
   "Claudia": new BeaconBase('Claudia'),
   "Julia": new BeaconBase('Julia'),
-  "Servilia": new BeaconBase('Servilia'),
+  //"Servilia": new BeaconBase('Servilia'),
 }
 
 export default function(router) {
