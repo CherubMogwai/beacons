@@ -128,7 +128,7 @@ export default class Beacon {
       return [ ...[255, 50, 50 ], 96];
     } else if (total < 1000) {
       console.log([ "less than 100 m:", total ]);
-      return [ ...[255, 0, 255 ], 10];
+      return [ ...[255, 255, 255 ], 100];
     }
   }
 }
